@@ -12,6 +12,7 @@
   <div class="jumbotron">
   <h1>Welcome to the world of Riven</h1>
   </div>
+  <p class="flash-text"><em>---from a time long forgetten---</em></p>
     <form id="submit-character">
       <div>
         <h4>Please Enter Your Player's Name</h4>
@@ -24,11 +25,11 @@
           <div class="choosecharacter">
           <h3>Choose your character:</h3>
           <select name="character" id="character">
-          <option value="0">-Select Your Character-</option>
-          <option value="Paladin">Paladin</option>
-          <option value="Mage">Mage</option>
-          <option value="Brute">Brute</option>
-        </select>
+            <option value="0">-Select Your Character-</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Mage">Mage</option>
+            <option value="Brute">Brute</option>
+          </select>
         </div>
       </div>
       <br>
@@ -37,11 +38,11 @@
       <div class="chooseweapon">
         <h3>Choose your weapon:</h3>
         <select name="weapon" id="weapon">
-        <option value="0">-Select Your Weapon-</option>
-        <option value="1">Sword</option>
-        <option value="2">Staff</option>
-        <option value="3">Axe</option>
-      </select>
+          <option value="0">-Select Your Weapon-</option>
+          <option value="1">Sword</option>
+          <option value="2">Staff</option>
+          <option value="3">Axe</option>
+        </select>
     </div>
   </div>
 </div>
@@ -53,12 +54,15 @@
 
 <div class="page2">
   <h3 id="character-display"></h3>
-  <p>HP:<span id="player-hp"></span></p>
-  <p>MP:<span id="player-mp"></span></p>
-  <p>STR:<span id="player-str"></span></p>
-  <p>INT:<span id="player-int"></span></p>
-  <p>AGI:<span id="player-agi"></span></p>
+  <p class="flash-text">HP:<span id="player-hp"></span></p>
+  <p class="flash-text">MP:<span id="player-mp"></span></p>
+  <p class="flash-text">STR:<span id="player-str"></span></p>
+  <p class="flash-text">INT:<span id="player-int"></span></p>
+  <p class="flash-text">AGI:<span id="player-agi"></span></p>
   <button id="endviewingcharacter">Next</button>
+  <img src="https://cdn.discordapp.com/attachments/938476345514655784/938519124382974012/paladin.png" alt="png of a paladin">
+  <img src="" alt="png of a mage">
+  <p>The Paladin. A noble warrior who has trained in the path of the holy ways of Ashra. These devout warriors harness the divine powers of the Godess Ashra to smite evil </p>
 </div>
 
 
@@ -111,7 +115,7 @@
   <!-- results screen -->
   <div id="results-screen">
     <div>
-      <h2>-RESULTS-</h2>
+      <h2 class="flash-text">-RESULTS-</h2>
       <h4 id="exp">Experience:</h4>
       <h4 id="loot">Items:</h4>
       <h4 id="zenny">Zenny:</h4>
@@ -129,17 +133,22 @@
 
 <!-- town -->
 <div id="town">
+  <h3>Welcome to Gravendale City</h3>
+  <p>This bustling city was once part of an even greater kingdom under the rule of Count Fahlslem; The Kingdom of Duhne. They were well known for their export of a rare mineral called Chrisym-Stone. Due to unfornate events the Count no longer lives and the kingdom has been reduced into this small city. The town's folk are terrified of going into his fortress north of the city and tales of monsters and ghosts permiate the streets.</p>
+  <button id="enter-shop">Enter Shop</button>
+  <button id="enter-inn" type="button">Enter Inn</button>
+  <button id="back-to-menu" type="button">Back To Destinations</button>
+</div>
   <div id="item-shop">
-    <button id="enter-shop">Enter Shop</button>
-    <button class="exit">Exit</button>
+    
     <div>
       <p><strong>Shop Keeper:</strong> Hello traveller. Want to take a look at my wares?</p>
       <div class="items">
         <h3>Items:</h3>
         <select name="items" id="items">
-        <option value="0">Mana Potion</option>
-        <option value="1">Health Potion</option>
-        <option value="2">Elixer</option>
+          <option value="0">Mana Potion</option>
+          <option value="1">Health Potion</option>
+          <option value="2">Elixer</option>
         </select>
         <button type="button" id="use-item">Use</button>
         <p id="buy-hp-potion">Health Potion huh? That will be 5 zenny</p>
@@ -148,13 +157,14 @@
         <button class="buy">Pay?</button>
         <button class="no-buy">Decline</button>
       </div>
-      
+      <br>
+      <button class="exit">Exit</button>
     </div>
 
   </div>
   <div id="inn">
-    <button id="enter-inn" type="button">Enter Inn</button>
-    <button class="exit" type="button">Exit</button>
+    
+    <button class="exit-inn" type="button">Exit</button>
   <div>
     <p><strong>Inn Keeper:</strong>Welcome weary traveller. Would you like to stay with us? It's 5 Zenny per night. Breakfast is included</p>
     <button class="buy" type="button">Pay?</button>
@@ -163,7 +173,7 @@
 
   </div>
 
-</div>
+
 
 <!-- dungeon -->
 <div id="dungeon">
@@ -176,7 +186,7 @@
     <p>You grip your weapon tightly. Sounds of howling wind creep through broken winds and dark corridors</p>
     <!-- display text floor 1 -->
 
-    <button class="exit" type="button">Exit</button>
+    <button class="exit-fort" type="button">Exit</button>
     <button class="move-ahead" type="button">Proceed</button>
   </div>
   <div id="floor2">
@@ -188,7 +198,7 @@
     <!-- display text floor 2 -->
 
     <button class="go-back" type="button">Go back to floor 1?</button>
-    <button class="move-ahead" type="button">Proceed</button>
+    <button class="move-ahead2" type="button">Proceed</button>
   </div>
   <div id="floor3">
 
@@ -198,7 +208,8 @@
     <p>The creature stands to full length, now towering over you. You recite an ancient prayer as you preapre for a challenging battle.</p>
     <!-- display text floor 3 -->
 
-    <button class="go-back" type="button">Go back to floor 2?</button>
+    <button class="go-back1" type="button">Go back to floor 2?</button>
+    <button class="back-to-home" type="button">Back To Destination Menu</button>
   </div>
 </div>
 
@@ -214,8 +225,8 @@
     <p>You gather up your courage and grip your weapon tightly as you prepare to delve deeper and deeper.</p>
     <!-- display text level1 -->
 
-    <button class="exit" type="button">Exit</button>
-    <button class="move-ahead" type="button">Proceed</button>
+    <button class="exit-cave" type="button">Exit</button>
+    <button class="move-ahead-cave" type="button">Proceed</button>
 
   </div>
   <div id="level2">
@@ -226,8 +237,8 @@
     <p>As you proceed the depth of this fluid grows deeper and deeper. Pretty soon you are up to your neck. After several minutes of wading through this disgusting marsh, you finally begin to climb higher. Ahead is a narrow passage way with a glowing green light coming from it's center. You don't know what lies ahead, but you are willing to press forward</p>
     <!-- display text level2 -->
 
-    <button class="go-back" type="button">Go back to level 1?</button>
-    <button class="move-ahead" type="button">Proceed</button>
+    <button class="go-back-cave" type="button">Go back to level 1?</button>
+    <button class="move-ahead-cave2" type="button">Proceed</button>
   </div>
   <div id="level3">
 
@@ -238,7 +249,8 @@
 <p>The man hands you a strange weapon, and proceeds back into the portal. You dont remember the name he called it, but you decide to name it 'The Magic Missile'</p>
 <!-- display text level3 -->
 
-    <button class="go-back" type="button">Go back to level 2?</button>
+    <button class="go-back-cave1" type="button">Go back to level 2?</button>
+    <button class="back-to-home-cave" type="button">Back To Destination Menu</button>
 
   </div>
 </div>

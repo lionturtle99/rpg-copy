@@ -21,10 +21,6 @@ body {
   text-align: center;
 }
 
-#user-name {
-  margin-left: 35%;
-}
-
 h1 {
   font-size: 30px;
   margin-top: 3%;
@@ -47,7 +43,6 @@ button {
   background-color: rgba(71, 61, 139, 0.685);
   color: rgba(224, 75, 104, 0.699);
   text-align: center;
-  margin-left: 35%;
 }
 
 button:hover {
@@ -59,7 +54,7 @@ button:hover {
   display: initial;  
 }
 
-  .page2, #battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen {
+  .page2, #battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen, #item-shop, #inn, #floor2, #floor3 {
   display:none;
 }
 
@@ -75,4 +70,28 @@ button:hover {
 .choosecharacter {
   float: right;
   /* margin-left: 20%; */
+}
+
+#page1 {
+  text-align: center;
+}
+
+.page2 {
+  position: relative;
+}
+
+.page2 img {
+  width:20%;
+  display:block;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+}
+
+.flash-text {
+  text-align: center;
+  color: rgb(255, 251, 0);
+  text-shadow: 1px 2px 3px rgb(231, 158, 0);
 }

@@ -20,6 +20,20 @@ function attachContactListeners() {
   });
 }
 
+// function for fighting an enemy
+// battle = () => {
+//   let pAttack = game.player.attackRoll();
+//   let eAttack = game.enemy.enemyAttack();
+//   if (game.turn === true) {
+//     game.enemy.hp -= pAttack;
+//     game.turn = !game.turn;
+//   } 
+//   else if (game.turn === false) {
+//     game.player.hp -= eAttack;
+//     game.turn = !game.turn;
+//   }
+// };
+
 // // function for adding a typing effect to the DOM
 // async function typeWriter(sentence, outputId) {
 //   const letters = sentence.split("");
@@ -66,16 +80,9 @@ function attachContactListeners() {
 //   }
 // };
 
-// function for fighting an enemy
-// fight = (enemyId) => {
-//   if (game.turn === true) {
-//     game.player.hp - game.enemy.enemyAttack();
-//     game.turn = !game.turn;
-//   } 
-//   else if (game.turn === false)
-//     game.enemy[enemyId].hp - game.player.attackRoll();
-//     game.turn = !game.turn;
-// };
+
+
+
 
 
 
@@ -98,12 +105,15 @@ $(document).ready(function() {
 
   $(".buy").on("click", function(){
     if (items === "0") {
+      game.player.inventory.push("0");
       game.player.currency - 10;
       $("#buy-mp-potion").show();
     } else if (items === "1") {
+      game.player.inventory.push("1");
       game.player.currency - 5;
       $("#buy-hp-potion").show();
     } else if (items === "2") {
+      game.player.inventory.push("2");
       game.player.currency - 25;
       $("#buy-elixer").show();
     }
@@ -114,6 +124,17 @@ $(document).ready(function() {
 $("#create").on("click", function() {
   $("#page1").hide();
   $(".page2").show();
+  if (game.player.character === "paladin") {
+    $("#paladin-img").show();
+    game.player.hp = 50;
+    game.player.mp = 25;
+    game.player.str = 12;
+    game.player.int = 10;
+  } 
+  else if (arguments.player.character === "mage") {
+    $("#mage-img").show();
+
+  }
 });
 //leave character viewing page
 $("#endviewingcharacter").on("click", function() {
@@ -125,15 +146,85 @@ $("#choose-town").on("click", function() {
   $("#map-hub").hide();
   $("#town").show();
 });
-$("#choose-dungeon").on("click", function () {
+$("#choose-dungeon").on("click", function() {
   $("#map-hub").hide();
   $("#dungeon").show();
 });
-$("#choose-cave").on("click", function () {
+$("#choose-cave").on("click", function() {
   $("#map-hub").hide();
   $("#cave").show();
 });
 //manages town
-// $("#enter-shop").on("click" function () {
-
-// })
+$("#enter-shop").on("click", function() {
+  $("#item-shop").show();
+  $("#town").hide();
+});
+$(".exit").on("click", function() {
+  $("#item-shop").hide();
+  $("#town").show();
+});
+$("#enter-inn").on("click", function() {
+  $("#inn").show();
+  $("#town").hide();
+});
+$(".exit-inn").on("click", function() {
+  $("#inn").hide();
+  $("#town").show();
+});
+$("#back-to-menu").on("click", function() {
+  $("#town").hide();
+  $("#map-hub").show();
+});
+//manages fortress
+$(".move-ahead").on("click", function() {
+  $("#floor1").hide();
+  $("#floor2").show();
+});
+$(".exit-fort").on("click", function () {
+  $("#dungeon").hide();
+  $("#map-hub").show();
+});
+$(".go-back").on("click", function () {
+  $("#floor2").hide();
+  $("#floor1").show();
+});
+$(".move-ahead").on("click", function () {
+  $("#floor1").hide();
+  $("#floor2").show();
+});
+$(".move-ahead2").on("click", function () {
+  $("#floor2").hide();
+  $("#floor3").show();
+});
+$(".go-back1").on("click", function () {
+  $("#floor3").hide();
+  $("#floor2").show();
+});
+$(".back-to-home").on("click", function () {
+  $("#dungeon").hide();
+  $("#map-hub").show();
+});
+$(".exit-cave").on("click", function () {
+  $("#cave").hide();
+  $("#map-hub").show();
+});
+$(".move-ahead-cave").on("click", function () {
+  $("#level1").hide();
+  $("#level2").show();
+});
+$(".go-back-cave").on("click", function () {
+  $("#level2").hide();
+  $("#level1").show();
+});
+$(".move-ahead-cave2").on("click", function () {
+  $("#level2").hide();
+  $("#level3").show();
+});
+$(".go-back-cave1").on("click", function () {
+  $("#level3").hide();
+  $("#level2").show();
+});
+$(".back-to-home-cave").on("click", function () {
+  $("#cave").hide();
+  $("#map-hub").show();
+});

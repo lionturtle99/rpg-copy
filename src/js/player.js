@@ -29,14 +29,15 @@ export default class Player {
     return roll;
   }
   useItem() {
+    let that = this;
     this.inventory.forEach(function(item){
       if (item === "1") {
-        this.hp += 10;
+        that.hp += 10;
       } else if (item === "0") {
-        this.mp += 10;
+        that.mp += 10;
       } else if (item === "2") {
-        this.hp += 5;
-        this.mp += 5;
+        that.hp += 5;
+        that.mp += 5;
       }
     });
   }
