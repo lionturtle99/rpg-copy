@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fantasy RPG</title>
+</head>
+<body>
+
+<!-- character creation screen -->
+<div id="page1">
+  <form id="submit-character">
+    <div>
+      <h4>Please Enter Your Player's Name</h4>
+      <input type="text" id="user-name">
+    </div>
+    <div>
+    <select name="character" id="character">Choose your character:</select>
+    <option value="0">-Select Your Character-</option>
+    <option value="1">Paladin</option>
+    <option value="2">Mage</option>
+    <option value="3">Brute</option>
+  </div>
+  <div>
+    <select name="weapon" id="weapon">Choose your weapon:</select>
+    <option value="0">-Select Your Weapon-</option>
+    <option value="1">Sword</option>
+    <option value="2">Staff</option>
+    <option value="3">Axe</option>
+</div>
+    <button type="submit" id="create">Create Your Character</button>
+  </form>
+</div>
+
+<!-- battle screen -->
+<div>
+  <div id="battle-screen">
+
+    <!-- player's stats -->
+    <div id=player-stats>
+      <h4 id="player-name">Player:</h4>
+      <h4 id="hit-points">Life Points:</h4>
+      <h4 id="magic-points">Magic Points:</h4>
+    </div>
+
+    <!-- player options -->
+    <div id="player-turn">
+    <div class="items">
+      <select name="items" id="items">Items</select>
+      <option value="0">Mana Potion</option>
+      <option value="1">Health Potion</option>
+      <option value="2">Elixer</option>
+      <button type="button" id="use-item">Use</button>
+    </div>
+
+    <!-- player attack/defend/item -->
+    <div id="attack-defend">
+      <div>
+        <button id="attack" type="button">Attack</button>
+      </div>
+      <div>
+        <button id="defend" type="button">Defend</button>
+      </div>
+      <div>
+        <button id="item" type="item">Item</button>
+      </div>
+    </div>
+    </div>
+
+  <!-- enemies turn -->
+  <div id="enemy-turn">
+    <h4 id="enemy-name">Enemy:</h4>
+  </div>
+
+  <!-- results screen -->
+  <div id="results-screen">
+    <div>
+      <h2>-RESULTS-</h2>
+      <h4 id="exp">Experience:</h4>
+      <h4 id="loot">Items:</h4>
+      <h4 id="zenny">Zenny:</h4>
+    </div>
+  </div>
+</div>
+
+<!-- map selection -->
+<div id="map-hub">
+  <h2>Choose Your Destination</h2>  
+  <button id="choose-town">Gravendale City</button>
+  <button id="choose-dungeon">Grimsythe Fortress</button>
+  <button id="choose-cave">Chrisym-Stone Mines</button>
+</div>
+
+<!-- town -->
+<div id="town">
+  <div id="item-shop">
+    <button id="enter-shop">Enter Shop</button>
+    <button class="exit">Exit</button>
+    <div>
+      <p><strong>Shop Keeper:</strong> Hello traveller. Want to take a look at my wares?</p>
+      <div class="items">
+        <select name="items" id="items">Items</select>
+        <option value="0">Mana Potion</option>
+        <option value="1">Health Potion</option>
+        <option value="2">Elixer</option>
+        <button type="button" id="use-item">Use</button>
+        <p id="buy-hp-potion">Health Potion huh? That will be 5 zenny</p>
+        <p id="buy-mp-potion">Mana Potion huh? That will be 10 zenny</p>
+        <p id="buy-elixer">Elixer huh? That will be 25 zenny</p>
+        <button class="buy">Pay?</button>
+        <button class="no-buy">Decline</button>
+      </div>
+      
+    </div>
+
+  </div>
+  <div id="inn">
+    <button id="enter-inn">Enter Inn</button>
+    <button class="exit">Exit</button>
+  <div>
+    <p><strong>Inn Keeper:</strong>Welcome weary traveller. Would you like to stay with us? It's 5 Zenny per night. Breakfast is included</p>
+    <button class="buy">Pay?</button>
+    <button class="no-buy">Decline</button>
+  </div>
+
+  </div>
+
+</div>
+
+<!-- dungeon -->
+<div id="dungeon">
+  <h2>Grimsythe Fortress</h2>
+  <div id="floor1">
+
+    <!-- display text floor 1 -->
+    <p>You have entered the Grimsythe Fortress...</p>
+    <p>The repugnent smell of blood and mold fills the air. You feel a chill run down your spine and get that feeling that <em>something</e,>... <strong><em>somewhere</em><strong>... is watching you...</p>
+    <p>You grip your weapon tightly. Sounds of howling wind creep through broken winds and dark corridors</p>
+    <!-- display text floor 1 -->
+
+    <button class="exit">Exit</button>
+    <button class="move-ahead"></button>
+  </div>
+  <div id="floor2">
+
+    <!-- display text floor 2 -->
+    <p>Moving forward, you now enter into what looks like a dining hall. The table is set with plates, silverware and cups. The spread over the table however; is rotten. From the looks of it, the count of this fortress and his mean were invaded before they could have their supper.</p>
+    <p>You begin to wonder to yourself. What could of happened to the count and his men? What foul creature or evil force now haunts this once noble fortess?</p>
+    <p>You hear a loud crash coming from the Count's main chamber! You loud screams of some foreign beast echo through the dining hall!! You get the feeling you are about to get the answer to your questions very soon. You gather up your courage and prepare yourself to investigate.</p>
+    <!-- display text floor 2 -->
+
+    <button class="go-back">Floor 1</button>
+    <button class="move-ahead"></button>
+  </div>
+  <div id="floor3">
+    <button class="go-back">Floor 2</button>
+  </div>
+</div>
+
+<!-- cave -->
+<div>
+  <div id="level1">
+    <button class="exit">Exit</button>
+    <button class="move-ahead"></button>
+
+  </div>
+  <div id="level2">
+    <button class="go-back">Level 1</button>
+    <button class="move-ahead"></button>
+
+  </div>
+  <div id="level3">
+    <button class="go-back">Level 2</button>
+
+  </div>
+</div>
+
+</div>
+</body>
+</html>
