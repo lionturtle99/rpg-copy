@@ -1,1 +1,18 @@
+body {
+	font-family: "Press Start 2P", monospace;
+  color: #ffffff;
+  background-color: #503535a8;
+  background-image: url();
+}
 
+#submit-character {
+  display: initial;  
+}
+
+#battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen {
+  display:none;
+}
+
+#map-hub, #town, #dungeon, #cave {
+  display:none;
+}

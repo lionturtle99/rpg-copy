@@ -2,9 +2,9 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Player from './js/player.js';
+// import Player from './js/player.js';
 import Game from './js/game.js';
-import Enemy from './js/enemy.js';
+// import Enemy from './js/enemy.js';
 
 let game = new Game();
 
@@ -13,32 +13,32 @@ function attachContactListeners() {
     let attack = game.player.attackRoll();
     $("").html(attack);
     game.player.attackRoll();
-      $("").html("Enemy HP:" + game.enemy.hp);
-      $("").html("Damage Dealt:" + game.player.attack);
+    $("").html("Enemy HP:" + game.enemy.hp);
+    $("").html("Damage Dealt:" + game.player.attack);
 
 
   });
 }
 
-// function for adding a typing effect to the DOM
-async function typeWriter(sentence, outputId) {
-  const letters = sentence.split("");
-  let i = 0;
-  while(i < letters.length) {
-    await letterTimer();
-    $(outputId).append(letters[i]);
-    i++
-  }
-  return;
-}
+// // function for adding a typing effect to the DOM
+// async function typeWriter(sentence, outputId) {
+//   const letters = sentence.split("");
+//   let i = 0;
+//   while(i < letters.length) {
+//     await letterTimer();
+//     $(outputId).append(letters[i]);
+//     i++
+//   }
+//   return;
+// }
 
-// timer for the typeWriter function
-function letterTimer() {
-  return new Promise(resolve => setTimeout(resolve, 100));
-}
+// // timer for the typeWriter function
+// function letterTimer() {
+//   return new Promise(resolve => setTimeout(resolve, 100));
+// }
 
 // function for selecting an action when user encounters a event
-eventResult((userChoice, lvl) => {
+eventResult = (userChoice, lvl) => {
   if (userChoice === "0") {
     $("#chest").show();
     addToInventory(lvl);
@@ -51,10 +51,10 @@ eventResult((userChoice, lvl) => {
     $("#prompt").hide();
      // hide prompt and move on
   }
-});
+};
 
 // function for adding items from the DOM to the players inventory
-addToInventory((lvl) => {
+addToInventory = (lvl) => {
   if (lvl === "0") {
     game.player.inventory += "0";
   } 
@@ -64,10 +64,10 @@ addToInventory((lvl) => {
   else if (lvl === "2") {
     game.player.inventory += "2";
   }
-});
+};
 
 // function for fighting an enemy
-fight((enemyId) => {
+fight = (enemyId) => {
   if (game.turn === true) {
     game.player.hp - game.enemy.enemyAttack();
     game.turn = !game.turn
@@ -75,7 +75,7 @@ fight((enemyId) => {
   else if (game.turn === false)
     game.enemy[enemyId].hp - game.player.attackRoll();
     game.turn = !game.turn
-});
+};
 
 $(document).ready(function() {
   $("").html(game.player.name);
@@ -99,4 +99,4 @@ $(document).ready(function() {
       $("#buy-elixer").show();
     };
   });
-})
+});
