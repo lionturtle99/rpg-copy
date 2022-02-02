@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
   <title>Fantasy RPG</title>
 </head>
 <body>
+  <div class="container">
 
 <!-- character creation screen -->
 <div id="page1">
-  <form id="submit-character">
-    <div>
-      <h4>Please Enter Your Player's Name</h4>
-      <input type="text" id="user-name">
-    </div>
-    <div>
-    <select name="character" id="character">Choose your character:</select>
-    <option value="0">-Select Your Character-</option>
-    <option value="1">Paladin</option>
-    <option value="2">Mage</option>
-    <option value="3">Brute</option>
+  <div class="jumbotron">
+  <h1>Welcome to the world of Riven</h1>
   </div>
-  <div>
-    <select name="weapon" id="weapon">Choose your weapon:</select>
-    <option value="0">-Select Your Weapon-</option>
-    <option value="1">Sword</option>
-    <option value="2">Staff</option>
-    <option value="3">Axe</option>
+    <form id="submit-character">
+      <div>
+        <h4>Please Enter Your Player's Name</h4>
+        <input type="text" id="user-name">
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="choosecharacter">
+          <h3>Choose your character:</h3>
+          <select name="character" id="character">
+          <option value="0">-Select Your Character-</option>
+          <option value="Paladin">Paladin</option>
+          <option value="Mage">Mage</option>
+          <option value="Brute">Brute</option>
+        </select>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="col-md-6">
+      <div class="chooseweapon">
+        <h3>Choose your weapon:</h3>
+        <select name="weapon" id="weapon">
+        <option value="0">-Select Your Weapon-</option>
+        <option value="1">Sword</option>
+        <option value="2">Staff</option>
+        <option value="3">Axe</option>
+      </select>
+    </div>
+  </div>
 </div>
+  <br>
+  <br>
     <button type="submit" id="create">Create Your Character</button>
   </form>
 </div>
+
+<div class="page2">
+  <h3 id="character-display"></h3>
+  <p>HP:<span id="player-hp"></span></p>
+  <p>MP:<span id="player-mp"></span></p>
+  <p>STR:<span id="player-str"></span></p>
+  <p>INT:<span id="player-int"></span></p>
+  <p>AGI:<span id="player-agi"></span></p>
+  <button id="endviewingcharacter">Next</button>
+</div>
+
+
 
 <!-- battle screen -->
 <div>
@@ -44,10 +77,13 @@
     <!-- player options -->
     <div id="player-turn">
     <div class="items">
-      <select name="items" id="items">Items</select>
-      <option value="0">Mana Potion</option>
-      <option value="1">Health Potion</option>
-      <option value="2">Elixer</option>
+      <h3>Items:</h3>
+      <select name="items" id="items">
+        <option value="3">-Select Your Items-</option>
+        <option value="0">Mana Potion</option>
+        <option value="1">Health Potion</option>
+        <option value="2">Elixer</option>
+      </select>
       <button type="button" id="use-item">Use</button>
     </div>
 
@@ -60,15 +96,17 @@
         <button id="defend" type="button">Defend</button>
       </div>
       <div>
-        <button id="item" type="item">Item</button>
+        <button id="item" type="button">Item</button>
       </div>
     </div>
-    </div>
+  
 
   <!-- enemies turn -->
   <div id="enemy-turn">
     <h4 id="enemy-name">Enemy:</h4>
+    <h4 id="enemy-health">HP:</h4>
   </div>
+</div>
 
   <!-- results screen -->
   <div id="results-screen">
@@ -97,10 +135,12 @@
     <div>
       <p><strong>Shop Keeper:</strong> Hello traveller. Want to take a look at my wares?</p>
       <div class="items">
-        <select name="items" id="items">Items</select>
+        <h3>Items:</h3>
+        <select name="items" id="items">
         <option value="0">Mana Potion</option>
         <option value="1">Health Potion</option>
         <option value="2">Elixer</option>
+        </select>
         <button type="button" id="use-item">Use</button>
         <p id="buy-hp-potion">Health Potion huh? That will be 5 zenny</p>
         <p id="buy-mp-potion">Mana Potion huh? That will be 10 zenny</p>
@@ -113,12 +153,12 @@
 
   </div>
   <div id="inn">
-    <button id="enter-inn">Enter Inn</button>
-    <button class="exit">Exit</button>
+    <button id="enter-inn" type="button">Enter Inn</button>
+    <button class="exit" type="button">Exit</button>
   <div>
     <p><strong>Inn Keeper:</strong>Welcome weary traveller. Would you like to stay with us? It's 5 Zenny per night. Breakfast is included</p>
-    <button class="buy">Pay?</button>
-    <button class="no-buy">Decline</button>
+    <button class="buy" type="button">Pay?</button>
+    <button class="no-buy" type="button">Decline</button>
   </div>
 
   </div>
@@ -132,12 +172,12 @@
 
     <!-- display text floor 1 -->
     <p>You have entered the Grimsythe Fortress...</p>
-    <p>The repugnent smell of blood and mold fills the air. You feel a chill run down your spine and get that feeling that <em>something</e,>... <strong><em>somewhere</em><strong>... is watching you...</p>
+    <p>The repugnent smell of blood and mold fills the air. You feel a chill run down your spine and get that feeling that <em>something</em>... <strong><em>somewhere</em><strong>... is watching you...</p>
     <p>You grip your weapon tightly. Sounds of howling wind creep through broken winds and dark corridors</p>
     <!-- display text floor 1 -->
 
-    <button class="exit">Exit</button>
-    <button class="move-ahead"></button>
+    <button class="exit" type="button">Exit</button>
+    <button class="move-ahead" type="button">Proceed</button>
   </div>
   <div id="floor2">
 
@@ -147,32 +187,63 @@
     <p>You hear a loud crash coming from the Count's main chamber! You loud screams of some foreign beast echo through the dining hall!! You get the feeling you are about to get the answer to your questions very soon. You gather up your courage and prepare yourself to investigate.</p>
     <!-- display text floor 2 -->
 
-    <button class="go-back">Floor 1</button>
-    <button class="move-ahead"></button>
+    <button class="go-back" type="button">Go back to floor 1?</button>
+    <button class="move-ahead" type="button">Proceed</button>
   </div>
   <div id="floor3">
-    <button class="go-back">Floor 2</button>
+
+    <!-- display text floor 3 -->
+    <p>The Count's chamber is littered with golden and glittering items strewn about the floor, some of these covered in blood. You look up to meet eyes with the thing making the loud noises that echoed through the dining room and your mind.</p>
+    <p>It is a <em>place-holder</em>!!!! It is now clear to you why people and travellers of the region have been talking about a mugger that has been killing and pillages valuables. This must be that mugger!</p>
+    <p>The creature stands to full length, now towering over you. You recite an ancient prayer as you preapre for a challenging battle.</p>
+    <!-- display text floor 3 -->
+
+    <button class="go-back" type="button">Go back to floor 2?</button>
   </div>
 </div>
 
 <!-- cave -->
-<div>
+<div id="cave">
   <div id="level1">
-    <button class="exit">Exit</button>
-    <button class="move-ahead"></button>
+
+    <!-- display text level1 -->
+    <p>You have entered into the mouth of Chrisym-Stone Mines...</p>
+    <p>A purple light glitters the walls of this cavern. Large crystals and sparkling rocks catch your eye. This mine, now abandoned, was once the main source of income for this region. Chrisym, the left over energy of dragons in crystalized form. This rare mineral is used to make magical weapons and armor, as well as in concoctions for rare potions and magical items.</p>
+    <p>The gear of the miners can still be seen in the light of these magical stones.</p>
+    <p>A part of you begins to wonder why this mine was abandoned. The thought of monsters or cave-ins puts you on edge.</p>
+    <p>You gather up your courage and grip your weapon tightly as you prepare to delve deeper and deeper.</p>
+    <!-- display text level1 -->
+
+    <button class="exit" type="button">Exit</button>
+    <button class="move-ahead" type="button">Proceed</button>
 
   </div>
   <div id="level2">
-    <button class="go-back">Level 1</button>
-    <button class="move-ahead"></button>
 
+    <!-- display text level2 -->
+    <p>Upon entering this room, you immediately realize that part of this mine has become flooded. You check around the cave for another path forward but quickly realize you may have to get wet to proceed.</p>
+    <p>Unsure of what could be inside of dark muddy body of water, a sense of uneasiness begins to overwhelm you. The liquid is viscous and sticks to your armor, but you are still free to move forward.</p>
+    <p>As you proceed the depth of this fluid grows deeper and deeper. Pretty soon you are up to your neck. After several minutes of wading through this disgusting marsh, you finally begin to climb higher. Ahead is a narrow passage way with a glowing green light coming from it's center. You don't know what lies ahead, but you are willing to press forward</p>
+    <!-- display text level2 -->
+
+    <button class="go-back" type="button">Go back to level 1?</button>
+    <button class="move-ahead" type="button">Proceed</button>
   </div>
   <div id="level3">
-    <button class="go-back">Level 2</button>
+
+<!-- display text level3 -->
+<p>The narrow mouth of the cave opens up into a massive chamber. Inside the walls are glowing green with some sort of stone different than the others.</p>
+<p>Suddenly a sort of portal opens up and a man cloked in foreign attire steps forth from it's mesmerizing spirals</p>
+<p>This man is wearing a bandana. He asks you if you know where Otacon is, then if you know where they are holding Metal Gear. Unsure, you decline to answer.</p>
+<p>The man hands you a strange weapon, and proceeds back into the portal. You dont remember the name he called it, but you decide to name it 'The Magic Missile'</p>
+<!-- display text level3 -->
+
+    <button class="go-back" type="button">Go back to level 2?</button>
 
   </div>
 </div>
 
+</div>
 </div>
 </body>
 </html>

@@ -5,6 +5,6 @@ export default class Enemy {
   }
 
   enemyAttack() {
-    Math.floor((Math.random() * 6) + 1);
+    return Math.floor((Math.random() * 6) + 1);
   }
 }

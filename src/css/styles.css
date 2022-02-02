@@ -1,18 +1,78 @@
 body {
 	font-family: "Press Start 2P", monospace;
-  color: #ffffff;
+  /* color: #ffffff; */
   background-color: #503535a8;
-  background-image: url();
+  /* background-image: url(); */
+  /* text-align: center; */
+}
+
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-image: url("https://media.discordapp.net/attachments/938476345514655784/938551098652897340/pixel-sun.png");
+  background-image: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px inset rgb(177, 35, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#user-name {
+  margin-left: 35%;
+}
+
+h1 {
+  font-size: 30px;
+  margin-top: 3%;
+  color: rgb(0, 212, 0);
+  text-shadow: 3px 2px 1px green;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
+h4 {
+  margin-top: 5%;
+  text-align: center;
+}
+
+button {
+  background-color: rgba(71, 61, 139, 0.685);
+  color: rgba(224, 75, 104, 0.699);
+  text-align: center;
+  margin-left: 35%;
+}
+
+button:hover {
+  color: crimson;
+  text-shadow: 1px 2px 3px red;
 }
 
 #submit-character {
   display: initial;  
 }
 
-#battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen {
+  .page2, #battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen {
   display:none;
 }
 
 #map-hub, #town, #dungeon, #cave {
   display:none;
+}
+
+.chooseweapon {
+  float: left;
+  /* margin-right: 20%; */
+}
+
+.choosecharacter {
+  float: right;
+  /* margin-left: 20%; */
 }

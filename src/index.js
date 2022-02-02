@@ -38,46 +38,49 @@ function attachContactListeners() {
 // }
 
 // function for selecting an action when user encounters a event
-eventResult = (userChoice, lvl) => {
-  if (userChoice === "0") {
-    $("#chest").show();
-    addToInventory(lvl);
-     // call a function to add item to their invventory
-  } else if (userChoice === "1") {
-    $("#arena").show();
-    fight();
-    // call function to fight an enemy
-  } else {
-    $("#prompt").hide();
-     // hide prompt and move on
-  }
-};
+// eventResult = (userChoice, lvl) => {
+//   if (userChoice === "0") {
+//     $("#chest").show();
+//     addToInventory(lvl);
+//     // call a function to add item to their invventory
+//   } else if (userChoice === "1") {
+//     $("#arena").show();
+//     fight();
+//     // call function to fight an enemy
+//   } else {
+//     $("#prompt").hide();
+//     // hide prompt and move on
+//   }
+// };
 
 // function for adding items from the DOM to the players inventory
-addToInventory = (lvl) => {
-  if (lvl === "0") {
-    game.player.inventory += "0";
-  } 
-  else if (lvl === "1") {
-    game.player.inventory += "1";
-  } 
-  else if (lvl === "2") {
-    game.player.inventory += "2";
-  }
-};
+// addToInventory = (lvl) => {
+//   if (lvl === "0") {
+//     game.player.inventory += "0";
+//   } 
+//   else if (lvl === "1") {
+//     game.player.inventory += "1";
+//   } 
+//   else if (lvl === "2") {
+//     game.player.inventory += "2";
+//   }
+// };
 
 // function for fighting an enemy
-fight = (enemyId) => {
-  if (game.turn === true) {
-    game.player.hp - game.enemy.enemyAttack();
-    game.turn = !game.turn
-  } 
-  else if (game.turn === false)
-    game.enemy[enemyId].hp - game.player.attackRoll();
-    game.turn = !game.turn
-};
+// fight = (enemyId) => {
+//   if (game.turn === true) {
+//     game.player.hp - game.enemy.enemyAttack();
+//     game.turn = !game.turn;
+//   } 
+//   else if (game.turn === false)
+//     game.enemy[enemyId].hp - game.player.attackRoll();
+//     game.turn = !game.turn;
+// };
+
+
 
 $(document).ready(function() {
+  let items = $("#items").val();
   $("").html(game.player.name);
   attachContactListeners();
   $("#submit-character").submit(function(event){
@@ -85,9 +88,15 @@ $(document).ready(function() {
     game.player.name = $("#user-name").val();
     game.player.weapon = $("#weapon").val();
     game.player.character = $("#character").val();
+    $("#character-display").html(game.player.character);
+    $("#player-hp").html(game.player.hp);
+    $("#player-mp").html(game.player.mp);
+    $("#player-str").html(game.player.str);
+    $("#player-int").html(game.player.int);
+    $("#player-agi").html(game.player.agi);
   });
+
   $(".buy").on("click", function(){
-    items = $("#items").val();
     if (items === "0") {
       game.player.currency - 10;
       $("#buy-mp-potion").show();
@@ -97,6 +106,34 @@ $(document).ready(function() {
     } else if (items === "2") {
       game.player.currency - 25;
       $("#buy-elixer").show();
-    };
+    }
   });
 });
+
+//leave home creation page
+$("#create").on("click", function() {
+  $("#page1").hide();
+  $(".page2").show();
+});
+//leave character viewing page
+$("#endviewingcharacter").on("click", function() {
+  $(".page2").hide();
+  $("#map-hub").show();
+});
+//goes to destination of choice
+$("#choose-town").on("click", function() {
+  $("#map-hub").hide();
+  $("#town").show();
+});
+$("#choose-dungeon").on("click", function () {
+  $("#map-hub").hide();
+  $("#dungeon").show();
+});
+$("#choose-cave").on("click", function () {
+  $("#map-hub").hide();
+  $("#cave").show();
+});
+//manages town
+// $("#enter-shop").on("click" function () {
+
+// })

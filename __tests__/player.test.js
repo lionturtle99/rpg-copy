@@ -11,4 +11,11 @@ describe('Player', () => {
     expect(player.attackRoll()).toBeGreaterThan(0);
     expect(player.attackRoll()).toBeLessThanOrEqual(12);
   });
+  test("should increase your hp and mp on your player object", () => {
+    let player = new Player(); 
+    player.inventory.push("2");
+    player.useItem("2");
+    expect(player.hp).toEqual(55);
+    expect(player.mp).toEqual(30);
+  });
 })
