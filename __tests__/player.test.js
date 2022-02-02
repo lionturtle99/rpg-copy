@@ -6,4 +6,9 @@ describe('Player', () => {
     const player = new Player();
     expect(player).toEqual({"agi": 10, "character": undefined, "currency": 25, "experience": 0, "hp": 50, "int": 10, "inventory": [], "level": 0, "mp": 25, "name": undefined, "str": 12, "weapon": undefined});
   });
+  test("should return a number based off of player parameters", () => {
+    const player = new Player({"agi": 10, "character": "paladin", "currency": 25, "experience": 0, "hp": 50, "int": 10, "inventory": [], "level": 0, "mp": 25, "name": "Glomledorf", "str": 12, "weapon": "1"}); 
+    expect(player.attackRoll()).toBeGreaterThan(0);
+    expect(player.attackRoll()).toBeLessThanOrEqual(12);
+  });
 })
