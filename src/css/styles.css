@@ -54,7 +54,7 @@ button:hover {
   display: initial;  
 }
 
-  .page2, #battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen, #item-shop, #inn, #floor2, #floor3 {
+.page2, #battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen, #item-shop, #inn, #floor2, #floor3, #level2, #level3 {
   display:none;
 }
 
@@ -80,7 +80,7 @@ button:hover {
   position: relative;
 }
 
-.page2 img {
+.page2 div img {
   width:20%;
   display:block;
   position:absolute;
@@ -94,4 +94,68 @@ button:hover {
   text-align: center;
   color: rgb(255, 251, 0);
   text-shadow: 1px 2px 3px rgb(231, 158, 0);
+}
+
+#pal {
+  display:none;
+  text-align: center;
+  /* margin-top:50%; */
+}
+
+#mag {
+  display:none;
+  text-align: center;
+  /* margin-top:50%; */
+}
+
+#bru {
+  display:none;
+  text-align: center;
+  /* margin-top:50%; */
+}
+
+
+
+/* #paladin-img, #brute-img, #mage-img {
+  display: none;
+} */
+
+.hub {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 40px;
+}
+
+.map-hub {
+  margin-top: 25%;
+}
+
+#town {
+  text-align: center;
+}
+
+.town-header {
+  margin-top: 5%;
+  font-size: 40px;
+}
+
+.town-info {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  border-radius: 10px;
+}
+
+.town-bg {
+  background-color: rgba(73, 73, 73, 0.582);
+}
+
+.btn-bg {
+  background-color: rgb(48, 40, 40);
+  padding: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
 }

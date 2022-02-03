@@ -34,6 +34,8 @@ function attachContactListeners() {
 //   }
 // };
 
+
+
 // // function for adding a typing effect to the DOM
 // async function typeWriter(sentence, outputId) {
 //   const letters = sentence.split("");
@@ -124,16 +126,27 @@ $(document).ready(function() {
 $("#create").on("click", function() {
   $("#page1").hide();
   $(".page2").show();
-  if (game.player.character === "paladin") {
-    $("#paladin-img").show();
+  if (game.player.character === "Paladin") {
+    $("div#pal").show();
     game.player.hp = 50;
     game.player.mp = 25;
     game.player.str = 12;
     game.player.int = 10;
-  } 
-  else if (arguments.player.character === "mage") {
-    $("#mage-img").show();
-
+    game.player.agi = 10;
+  } else if (game.player.character === "Mage") {
+    $("div#mag").show();
+    game.player.hp = 40;
+    game.player.mp = 40;
+    game.player.str = 6;
+    game.player.int = 30;
+    game.player.agi = 15;
+  } else if (game.player.character === "Brute") {
+    $("div#bru").show();
+    game.player.hp = 60;
+    game.player.mp = 25;
+    game.player.str = 16;
+    game.player.int = 0;
+    game.player.agi = 8;
   }
 });
 //leave character viewing page
@@ -148,11 +161,17 @@ $("#choose-town").on("click", function() {
 });
 $("#choose-dungeon").on("click", function() {
   $("#map-hub").hide();
+  $("#floor2").hide();
+  $("#floor3").hide();
   $("#dungeon").show();
+  $("#floor1").show();
 });
 $("#choose-cave").on("click", function() {
   $("#map-hub").hide();
+  $("#level2").hide();
+  $("#level3").hide();
   $("#cave").show();
+  $("#level1").show();
 });
 //manages town
 $("#enter-shop").on("click", function() {
@@ -204,6 +223,7 @@ $(".back-to-home").on("click", function () {
   $("#dungeon").hide();
   $("#map-hub").show();
 });
+//manages cave
 $(".exit-cave").on("click", function () {
   $("#cave").hide();
   $("#map-hub").show();
