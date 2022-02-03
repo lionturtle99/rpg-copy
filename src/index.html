@@ -9,7 +9,7 @@
 <body>
   <div class="container">
 
-    <!-- character creation screen -->
+<!-- character creation screen -->
     <div id="page1">
       <div class="jumbotron">
         <h1>Welcome to the world of Riven</h1>
@@ -54,28 +54,28 @@
 
     <div class="page2">
       <h3 class="character-display"></h3>
-      <p class="flash-text" class="flash">Name: <span class="player-name"></span></p>
-      <p class="flash-text" class="flash">HP:<span class="player-hp"></span></p>
-      <p class="flash-text" class="flash">MP:<span class="player-mp"></span></p>
-      <p class="flash-text" class="flash">STR:<span id="player-str"></span></p>
-      <p class="flash-text" class="flash">INT:<span id="player-int"></span></p>
-      <p class="flash-text" class="flash">AGI:<span id="player-agi"></span></p>
+      <p class="flash-text flash">Name: <span class="player-name"></span></p>
+      <p class="flash-text flash">HP:<span class="player-hp"></span></p>
+      <p class="flash-text flash">MP:<span class="player-mp"></span></p>
+      <p class="flash-text flash">STR:<span id="player-str"></span></p>
+      <p class="flash-text flash">INT:<span id="player-int"></span></p>
+      <p class="flash-text flash">AGI:<span id="player-agi"></span></p>
       <button id="endviewingcharacter">Next</button>
       <div class="pal">
         <img src="https://cdn.discordapp.com/attachments/938476345514655784/938519124382974012/paladin.png">
         <p class="flash-text">--The Paladin are noble warriors who have spent their days training in the path of
-          enlightment and justice. These devout missionaries of justice harness the divine powers of the Godess Ashra to
+          enlightenment and justice. These devout missionaries of justice harness the divine powers of the Goddess Ashra to
           smite evil foes--</p>
       </div>
       <div class="mag">
         <img src="https://cdn.discordapp.com/attachments/938476345514655784/938519142414291024/mage.png">
         <p class="flash-text">--The Mage are those who have spent many a day in The Great Library of Hanah-Vua studying
-          ancient tomes of Magik Arte. Once they have been deemed ready, the final part of their study is to travel the
+          ancient tomes of Maggikk-Arte. Once they have been deemed ready, the final part of their study is to travel the
           world and use their craft to slay monsters and help the people--</p>
       </div>
       <div class="bru">
         <img src="https://cdn.discordapp.com/attachments/938476345514655784/938527512231809134/brute.png">
-        <p class="flash-text">--The Brute are monsterous warriors who hail from the region of Asgorath. A nation
+        <p class="flash-text">--The Brute are monstrous warriors who hail from the region of Asgorath. A nation
           obsessed with war and honor. These proud fighters are eager to join any party going out on dangerous voyages.
           They are often the first to charge into battle--</p>
       </div>
@@ -87,15 +87,15 @@
 
 
 
-    <!-- battle screen -->
+<!-- battle screen -->
     <div>
       <div id="battle-screen">
         <div class="row">
           <div class="col-md-2" id="player-stats">
             <h3 class="character-display"></h3>
-            <p class="flash-text" class="flash">Name: <span class="player-name"></span></p>
-            <p class="flash-text" class="flash">HP:<span class="player-hp"></span></p>
-            <p class="flash-text" class="flash">MP:<span class="player-mp"></span></p>
+            <p class="flash-text flash">Name: <span class="player-name"></span></p>
+            <p class="flash-text flash">HP:<span class="player-hp"></span></p>
+            <p class="flash-text flash">MP:<span class="player-mp"></span></p>
             <div class="card"></div>
           </div>
           
@@ -126,44 +126,110 @@
           </div>
           
         </div>
-        <!-- player options -->
+<!-- player options -->
         <div id="player-turn">
           <div class="items">
               <h3>Items:</h3>
               <form id="battle-item">
                 <select name="items" id="battle-items">
                   <option value="3">-Select Your Items-</option>
-                  <option value="0">Mana Potion</option>
-                  <option value="1">Health Potion</option>
-                  <option value="2">Elixir</option>
+                  <option value="Mana Potion">Mana Potion</option>
+                  <option value="Health Potion">Health Potion</option>
+                  <option value="Elixir">Elixir</option>
                 </select>
                 <button type="submit" id="use-item">Use</button>
               </form>
               <button type="button" id="return-attack">Return<button>
             </div>
-          <!-- player attack/defend/item -->
+<!-- player attack/item -->
           <div id="btns-battle">
             <div>
-              <button id="attack" type="button">Attack</button>
+              <button class="attack" type="button">Attack</button>
             </div>
             <div>
-              <button id="item-use" type="button">Item</button>
+              <button class="item-use" type="button">Item</button>
             </div>
           </div>
         </div>
-        <!-- results screen -->
-        <div id="results-screen">
-          <div>
-            <h2 class="flash-text">-RESULTS-</h2>
-            <h4 id="exp">Experience:</h4>
-            <h4 id="loot">Items:</h4>
-            <h4 id="zenny">Zenny:</h4>
+      </div>
+<!-- SECOND BATTLE PAGE -->
+      <div id="battle-screen2">
+        <div class="row">
+          <div class="col-md-2" id="player-stats">
+            <h3 class="character-display"></h3>
+            <p class="flash-text flash">Name: <span class="player-name"></span></p>
+            <p class="flash-text flash">HP:<span class="player-hp"></span></p>
+            <p class="flash-text flash">MP:<span class="player-mp"></span></p>
+            <div class="card"></div>
           </div>
+          
+          <div class="col-md-4">
+            <div class="battle-images">
+            <div class="pal">
+              <img src="https://cdn.discordapp.com/attachments/938476345514655784/938519124382974012/paladin.png">
+            </div>
+            <div class="mag">
+              <img src="https://cdn.discordapp.com/attachments/938476345514655784/938519142414291024/mage.png">
+            </div>
+            <div class="bru">
+              <img src="https://cdn.discordapp.com/attachments/938476345514655784/938527512231809134/brute.png">
+            </div>
+          </div>
+          </div>
+          <div class="col-md-4">
+            <img id="enemy1"
+              src="https://cdn.discordapp.com/attachments/938476345514655784/938490935438880778/monster1.png">
+          </div>
+          
+          <div class="col-md-2">
+            <div id="enemy-turn">
+              <h4 id="enemy-name">Enemy:<span class="enemy-name"></span></h4>
+              <h4 id="enemy-health">HP:<span class="enemy-hp"></h4>
+            </div>
+            <div class="card"></div>
+          </div>
+          
+        </div>
+<!-- player options -->
+        <div id="player-turn">
+          <div class="items">
+              <h3>Items:</h3>
+              <form id="battle-item">
+                <select name="items" id="battle-items">
+                  <option value="3">-Select Your Items-</option>
+                  <option value="Mana Potion">Mana Potion</option>
+                  <option value="Health Potion">Health Potion</option>
+                  <option value="Elixir">Elixir</option>
+                </select>
+                <button type="submit" id="use-item">Use</button>
+              </form>
+              <button type="button" id="return-attack">Return<button>
+            </div>
+<!-- player attack/item -->
+          <div id="btns-battle">
+            <div>
+              <button class="attack" type="button">Attack</button>
+            </div>
+            <div>
+              <button class="item-use" type="button">Item</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- results screen -->
+      <div id="results-screen">
+        <div>
+          <h2 class="flash-text">-RESULTS-</h2>
+          <h3 class="flash-text"><span id="win-or-lose"></span></h3>
+          <h4>Experience:<span id="exp"></span></h4>
+          <h4>Items:<span id="loot"></span></h4>
+          <h4>Zenny:<span id="zenny"></span></h4>
+          <button class="back-to-home-cave" type="button">Back To Home?</button>
         </div>
       </div>
 
 
-      <!-- map selection -->
+<!-- map selection -->
       <div id="map-hub">
         <h2 class="hub">Choose Your Destination</h2>
         <div class="row">
@@ -181,15 +247,16 @@
           </div>
         </div>
       </div>
-      <!-- town -->
+<!-- town -->
       <div id="town">
         <h3 class="town-header">Welcome to Gravendale City</h3>
         <div class="town-bg">
-          <p class="town-info">This bustling city was once part of an even greater kingdom under the rule of Count
+          <!-- <p class="town-info">This bustling city was once part of an even greater kingdom under the rule of Count
             Fahlslem; The Kingdom of Duhne. They were well known for their export of a rare mineral called
             Chrisym-Stone. Due to unfortunate events the Count no longer lives and the kingdom has been reduced into this
             small city. The town's folk are terrified of going into his fortress north of the city and tales of monsters
-            and ghosts permeate the streets.</p>
+            and ghosts permeate the streets.</p> -->
+            <div class="town-info"></div>
         </div>
         <div class="btn-bg">
           <button id="enter-shop">Enter Shop</button>
@@ -218,7 +285,7 @@
             </form>
             <button id="shop-btn" class="no-buy">Decline</button>
             <div class="Player-items">
-              <p>Bank: $<span id="bank"></span>
+              <p>Bank: $<span class="bank"></span>
               <p>
               <ul id="inventory">
 
@@ -233,28 +300,32 @@
         <h2 class="inn-welcome">Welcome To The Inn</h2>
         <p class="inn-text"><strong>Inn Keeper:</strong>Welcome weary traveller. Would you like to stay with us? It's 5
           Zenny per night. Breakfast is included</p>
-        <button class="buy" type="button">Pay?</button>
-        <button class="no-buy" type="button">Decline</button>
+          <p>Bank: $<span class="bank"></span>
+        <button class="stay" type="button">Stay?</button>
         <button class="exit-inn" type="button">Exit</button>
       </div>
+      <div>
+        <p id="wake-up-message">The sun has begun to shine through the windows<span id="exit-rest"> Get up?</span></p>
+      </div>
 
-      <!-- dungeon -->
+<!-- dungeon -->
       <div id="dungeon">
         <div id="floor1">
           <h2 class="f1head">Grimsythe Fortress</h2>
-          <!-- display text floor 1 -->
-          <p class="f1text">You have entered the Grimsythe Fortress...</p>
+<!-- display text floor 1 -->
+          <!-- <p class="f1text">You have entered the Grimsythe Fortress...</p>
           <p class="f1text">The repugnant smell of blood and mold fills the air. You feel a chill run down your spine
             and get that feeling that <em>something</em>... <strong><em>somewhere</em><strong>... is watching you...</p>
           <p class="f1text">You grip your weapon tightly. Sounds of howling wind creep through broken winds and dark
-            corridors</p>
-          <!-- display text floor 1 -->
-          <button class="exit-fort" type="button">Exit</button>
+            corridors</p> -->
+            <div class="f1text"></div>
+<!-- display text floor 1 -->
+          <button class="back-to-home-cave" type="button">Exit</button>
           <button class="move-ahead" type="button">Proceed</button>
         </div>
         <div id="floor2">
           <h2 class="f1head">Grimsythe Fortress</h2>
-          <!-- display text floor 2 -->
+<!-- display text floor 2 -->
           <p class="f2text">Moving forward, you now enter into what looks like a dining hall. The table is set with
             plates, silverware and cups. The spread over the table however; is rotten. From the looks of it, the count
             of this fortress and his mean were invaded before they could have their supper.</p>
@@ -263,13 +334,13 @@
           <p class="f2text">You hear a loud crash coming from the Count's main chamber! You loud screams of some foreign
             beast echo through the dining hall!! You get the feeling you are about to get the answer to your questions
             very soon. You gather up your courage and prepare yourself to investigate.</p>
-          <!-- display text floor 2 -->
+<!-- display text floor 2 -->
           <button class="go-back" type="button">Go back to floor 1?</button>
           <button class="move-ahead2" type="button">Proceed</button>
         </div>
         <div id="floor3">
           <h2 class="f1head">Grimsythe Fortress</h2>
-          <!-- display text floor 3 -->
+<!-- display text floor 3 -->
           <p class="f3text">The Count's chamber is littered with golden and glittering items strewn about the floor,
             some of these covered in blood. You look up to meet eyes with the thing making the loud noises that echoed
             through the dining room and your mind.</p>
@@ -278,18 +349,19 @@
             mugger!</p>
           <p class="f3text">The creature stands to full length, now towering over you. You recite an ancient prayer as
             you prepare for a challenging battle.</p>
-          <!-- display text floor 3 -->
+<!-- display text floor 3 -->
           <button class="go-back1" type="button">Go back to floor 2?</button>
+          
           <form class="battle-dungeon">
             <button class="battle-dungeon" type="submit">Battle!</button>
           </form>
         </div>
       </div>
-      <!-- cave -->
+<!-- cave -->
       <div id="cave">
         <div id="level1">
           <h2 class="f1head">Chrisym-Stone Mines</h2>
-          <!-- display text level1 -->
+<!-- display text level1 -->
           <p class="lvl1text">You have entered into the mouth of Chrisym-Stone Mines...</p>
           <p class="lvl1text">A purple light glitters the walls of this cavern. Large crystals and sparkling rocks catch
             your eye. This mine, now abandoned, was once the main source of income for this region. Chrisym, the left
@@ -300,13 +372,13 @@
             cave-ins puts you on edge.</p>
           <p class="lvl1text">You gather up your courage and grip your weapon tightly as you prepare to delve deeper and
             deeper.</p>
-          <!-- display text level1 -->
-          <button class="exit-cave" type="button">Exit</button>
+<!-- display text level1 -->
+          <button class="back-to-home-cave" type="button">Exit</button>
           <button class="move-ahead-cave" type="button">Proceed</button>
         </div>
         <div id="level2">
           <h2 class="f1head">Chrisym-Stone Mines</h2>
-          <!-- display text level2 -->
+<!-- display text level2 -->
           <p class="lvl2text">Upon entering this room, you immediately realize that part of this mine has become
             flooded. You check around the cave for another path forward but quickly realize you may have to get wet to
             proceed.</p>
@@ -317,13 +389,13 @@
             your neck. After several minutes of wading through this disgusting marsh, you finally begin to climb higher.
             Ahead is a narrow passage way with a glowing green light coming from it's center. You don't know what lies
             ahead, but you are willing to press forward</p>
-          <!-- display text level2 -->
+<!-- display text level2 -->
           <button class="go-back-cave" type="button">Go back to level 1?</button>
           <button class="move-ahead-cave2" type="button">Proceed</button>
         </div>
         <div id="level3">
           <h2 class="f1head">Chrisym-Stone Mines</h2>
-          <!-- display text level3 -->
+<!-- display text level3 -->
           <p class="lvl3text">The narrow mouth of the cave opens up into a massive chamber. Inside the walls are glowing
             green with some sort of stone different than the others.</p>
           <p class="lvl3text">Suddenly a sort of portal opens up and a man cloaked in foreign attire steps forth from
@@ -332,13 +404,12 @@
             where they are holding 'Metal Gear'. Unsure, you decline to answer.</p>
           <p class="lvl3text">The man hands you a strange weapon, and proceeds back into the portal. You don't remember
             the name he called it, but you decide to name it 'The Magic Missile'</p>
-          <!-- display text level3 -->
+<!-- display text level3 -->
           <button class="go-back-cave1" type="button">Go back to level 2?</button>
-          <button class="back-to-home-cave" type="button">Back To Destination Menu</button>
+          <button class="battle2-go" type="button">Battle!</button>
         </div>
       </div>
     </div>
   </div>
 </body>
-
 </html>

@@ -1,4 +1,5 @@
 body {
+  padding-top: 2%;
 	font-family: "Press Start 2P", monospace;
   /* color: #ffffff; */
   background-color: #503535a8;
@@ -54,12 +55,26 @@ button:hover {
   display: initial;  
 }
 
-.page2, #battle-screen, #btns-battle, #results-screen, #item-shop, #inn, #floor2, #floor3, #level2, #level3, #return-attack, #items {
+.page2, #battle-screen, #btns-battle, #item-shop, #inn, #floor2, #floor3, #level2, #level3, #return-attack, #items {
   display:none;
 }
 
 #map-hub, #town, #dungeon, #cave {
   display:none;
+}
+
+#wake-up-message {
+  display:none;
+  text-align: center;
+}
+
+#exit-rest:hover {
+  text-decoration: underline;
+}
+
+#exit-rest {
+  cursor: pointer;
+  color: #0088cc;
 }
 
 .chooseweapon {
@@ -97,14 +112,13 @@ button:hover {
 
 .flash-text {
   text-align: center;
-  margin-right: 70%;
   color: rgb(255, 251, 0);
   text-shadow: 1px 2px 3px rgb(231, 158, 0);
 }
 
 #sword-img {
   image-rendering: pixelated;
-  position: absolute;
+  /* position: absolute; */
   width: 300px;
   height: 300px;
   margin-left: 40%;
@@ -169,9 +183,9 @@ button:hover {
 }
 
 #enemy1 {
-  width: 600px;
-  height: 600px;
-  margin-top: 14%;
+  width: 550px;
+  height: 550px;
+  margin-top: 5%;
   image-rendering: pixelated;
 }
 
@@ -268,9 +282,14 @@ button:hover {
   margin-top: 5%;
 }
 
-#choose-dungeon, #choose-town, #choose-cave {
+#choose-dungeon, #choose-town, #choose-cave, #create, #use-item, #return-attack, #use-item, #return-attack, .back-to-home-cave, .map-hub, #enter-shop, #enter-inn, #back-to-menu, .yes, .no, .shop-btn, #leave, .stay, .exit-inn, .back-to-home-cave, .move-ahead, .go-back, .move-ahead2, .move-ahead-cave, .go-back-cave, .move-ahead-cave2, .go-back-cave1, .battle2-go, #endviewingcharacter {
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
   border: 2px 2px 2px rgb(201, 59, 59);
+}
+
+.go-back1, .battle-dungeon, .attack, .item-use, #attack, #item-use {
+  box-shadow: 10px 10px 10px rgb(0, 0, 0);
+  display: inline-block;
 }
 
 #inn {
@@ -282,14 +301,6 @@ button:hover {
   border-radius: 10px;
   margin-left: 10%;
   margin-right: 10%;
-}
-
-/* .buy {
-  
-} */
-
-.exit-inn {
-  
 }
 
 #floor1, #floor2, #floor3, #level1, #level2, #level3 {
@@ -312,6 +323,7 @@ button:hover {
 }
 
 .flash {
+  text-align: left;
   margin-right: 93%;
 }
 
@@ -337,4 +349,25 @@ button:hover {
   text-align: center;
   margin-left: 40%;
   margin-bottom: 10%;
+}
+
+#results-screen {
+  display: none;
+  position: absolute;
+  padding: 10%;
+  background-color: #503535a8;
+  width: 90%;
+  height: 90%;
+  margin-top: 2%;
+  margin-right: 10%;
+  z-index: 1;
+}
+
+/* button.back-to-home-cave {
+  margin-top: 5em;
+  text-align: center;
+} */
+
+#battle-screen2 {
+  display: none;
 }

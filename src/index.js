@@ -20,51 +20,33 @@ function attachContactListeners() {
   });
 }
 
-// // function for adding a typing effect to the DOM
-// async function typeWriter(sentence, outputId) {
-//   const letters = sentence.split("");
-//   let i = 0;
-//   while(i < letters.length) {
-//     await letterTimer();
-//     $(outputId).append(letters[i]);
-//     i++
-//   }
-//   return;
-// }
+const outputId = ".town-info";
+const townInfo = `This bustling city was once part of an even greater kingdom under the rule of Count
+Fahlslem; The Kingdom of Duhne. They were well known for their export of a rare mineral called
+Chrisym-Stone. Due to unfortunate events the Count no longer lives and the kingdom has been reduced into this
+small city. The town's folk are terrified of going into his fortress north of the city and tales of monsters
+and ghosts permeate the streets`;
 
-// // timer for the typeWriter function
-// function letterTimer() {
-//   return new Promise(resolve => setTimeout(resolve, 100));
-// }
+const dungeonFloor1 = ``;
+const dungeonFloor1Id = "";
 
-// function for selecting an action when user encounters a event
-// eventResult = (userChoice, lvl) => {
-//   if (userChoice === "0") {
-//     $("#chest").show();
-//     addToInventory(lvl);
-//     // call a function to add item to their inventory
-//   } else if (userChoice === "1") {
-//     $("#arena").show();
-//     fight();
-//     // call function to fight an enemy
-//   } else {
-//     $("#prompt").hide();
-//     // hide prompt and move on
-//   }
-// };
 
-// function for adding items from the DOM to the players inventory
-// addToInventory = (lvl) => {
-//   if (lvl === "0") {
-//     game.player.inventory += "0";
-//   } 
-//   else if (lvl === "1") {
-//     game.player.inventory += "1";
-//   } 
-//   else if (lvl === "2") {
-//     game.player.inventory += "2";
-//   }
-// };
+// function for adding a typing effect to the DOM
+async function typeWriter(sentence, outputId) {
+  const letters = sentence.split("");
+  let i = 0;
+  while(i < letters.length) {
+    await letterDelay();
+    $(outputId).append(letters[i]);
+    i++
+  }
+  return;
+}
+
+// timer for the typeWriter function
+function letterDelay() {
+  return new Promise(resolve => setTimeout(resolve, 100));
+}
 
 function displayStats() {
   $(".character-display").html(game.player.character);
@@ -74,10 +56,11 @@ function displayStats() {
   $("#player-str").html(game.player.str);
   $("#player-int").html(game.player.int);
   $("#player-agi").html(game.player.agi);
+  $(".enemy-hp").html(game.enemy.hp);
 }
 
 function displayInventory() {
-  $("#bank").html(game.player.currency);
+  $(".bank").html(game.player.currency);
   $("#inventory").html("");
   game.player.inventory.forEach(function(item){
     $("#inventory").append("<li>" + item + "</li>");
@@ -137,9 +120,6 @@ function displayHero() {
   }
 }
 
-
-
-
 $("").html(game.player.name);
 attachContactListeners();
 $("#submit-character").submit(function(event){
@@ -154,7 +134,6 @@ $("#submit-character").submit(function(event){
   displayHero();
 });
 
-
 // battle dungeon page
 $(".battle-dungeon").submit(function(event) {
   event.preventDefault();
@@ -165,26 +144,53 @@ $(".battle-dungeon").submit(function(event) {
   $("#battle-screen").show();
   $("#btns-battle").show();
   $("#battle-items").hide();
+  $("#use-item").hide();
   displayHero();
-  $("#attack").on("click", function() {
-    battle();
-    displayStats();
-    setTimeout(battle(), 1000);
-    displayStats();
-    console.log(game.enemy1.hp);
-    console.log(game.player.attackRoll());
-  });
+  displayStats();
+  $(".attack").on("click", function() {
+    setTimeout(function(){
+      $('#enemy1').fadeOut();
+      $('#enemy1').fadeIn();
+      $('#enemy1').fadeOut();
+      $('#enemy1').fadeIn();
+      battle();
+      displayStats();
+      battle();
+      displayStats();
+      battleResult();
+      console.log(game.player.str)
+      console.log(game.player.attackRoll())
+      console.log(game.enemy.hp + "enemy hp");
+      console.log(game.player.attackRoll() + "attack roll");
+    });
+  }, 2000)
 });
-$("#item-use").on("click", function(){
+
+function battleResult() {
+  if (game.player.hp <= 0 || game.enemy.hp <= 0) {
+    $("#battle-screen").fadeOut();
+    $("#results-screen").fadeIn();
+    if (game.player.hp <= 0) {
+      $("#win-or-lose").html("You Lose ):");
+    } else if (game.enemy.hp <= 0) {
+      $("#win-or-lose").html("You Won!!");
+    }
+  }
+}
+
+$(".item-use").on("click", function(){
+  $("#use-item").show();
   $("#btns-battle").hide();
   $("#battle-items").show();
   $("#return-attack").show();
 });
+
 $("#return-attack").on("click", function(){
   $("#btns-battle").show();
   $("#battle-items").hide();
   $("#return-attack").hide();
 });
+
 $("#battle-item").submit(function(event){
   event.preventDefault();
   let potion = $("#battle-items").val();
@@ -211,7 +217,6 @@ function battle() {
 $("#buy-items").submit(function(event){
   let items = $("#items").val();
   event.preventDefault();
-
   if (game.player.currency >= 2) {
     if (items === "Elixir") {
       game.player.inventory.push(items);
@@ -244,7 +249,18 @@ $("#buy-items").submit(function(event){
   displayInventory();
 });
 
-
+$(".stay").on("click", function(){
+  $("#inn").fadeOut();
+  console.log(game.player.hp)
+  game.player.payInn();
+  console.log(game.player.hp)
+  $("#wake-up-message").fadeIn();
+});
+$("#exit-rest").on("click", function() {
+  $("#wake-up-message").fadeOut();
+  $("#inn").fadeIn();
+  displayInventory();
+});
 
 //leave character viewing page
 $("#endviewingcharacter").on("click", function() {
@@ -255,6 +271,7 @@ $("#endviewingcharacter").on("click", function() {
 $("#choose-town").on("click", function() {
   $("#map-hub").hide();
   $("#town").show();
+  typeWriter(townInfo, outputId);
 });
 $("#choose-dungeon").on("click", function() {
   $("#map-hub").hide();
@@ -262,6 +279,7 @@ $("#choose-dungeon").on("click", function() {
   $("#floor3").hide();
   $("#dungeon").show();
   $("#floor1").show();
+  typeWriter(dungeonFloor1, dungeonFloor1Id);
 });
 $("#choose-cave").on("click", function() {
   $("#map-hub").hide();
@@ -282,6 +300,7 @@ $("#enter-shop").on("click", function() {
 });
 $(".yes").on("click", function() {
   $(".items").show();
+  $("#items").show();
   $("#leave").show();
   $(".yes").hide();
   $(".no").hide();
@@ -297,6 +316,7 @@ $(".exit").on("click", function() {
 $("#enter-inn").on("click", function() {
   $("#inn").show();
   $("#town").hide();
+  displayInventory();
 });
 $(".exit-inn").on("click", function() {
   $("#inn").hide();
@@ -311,11 +331,6 @@ $(".move-ahead").on("click", function() {
   $("#floor1").hide();
   $("#floor2").show();
 });
-// $(".battle-dungeon").on("click", function () {
-//   $("#dungeon").hide();
-//   $("#battle-screen").show();
-  
-// // });
 $(".go-back").on("click", function () {
   $("#floor2").hide();
   $("#floor1").show();
@@ -332,15 +347,11 @@ $(".go-back1").on("click", function () {
   $("#floor3").hide();
   $("#floor2").show();
 });
-$(".back-to-home").on("click", function () {
+$(".back-to-home-cave").on("click", function () {
   $("#dungeon").hide();
   $("#map-hub").show();
 });
 //manages cave
-$(".exit-cave").on("click", function () {
-  $("#cave").hide();
-  $("#map-hub").show();
-});
 $(".move-ahead-cave").on("click", function () {
   $("#level1").hide();
   $("#level2").show();
@@ -357,7 +368,20 @@ $(".go-back-cave1").on("click", function () {
   $("#level3").hide();
   $("#level2").show();
 });
-$(".back-to-home-cave").on("click", function () {
+$(".battle2-go").on("click", function () {
   $("#cave").hide();
+  $("#battle-screen2").show();
+});
+// manages exiting battle screen
+$(".back-to-home-cave").on("click", function () {
+  $("#results-screen").hide();
+  $("#battle-screen").hide();
   $("#map-hub").show();
+  location.reload();
+  console.log(game.enemy.hp)
+  game.enemy.hp = 25;
+  console.log(game.enemy.hp + "enemy")
+  console.log(game.player.hp + "player")
+  game.player.hp += 25;
+  console.log(game.player.hp + "player")
 });

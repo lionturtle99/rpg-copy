@@ -1,3 +1,5 @@
+// import Game from "./game";
+
 export default class Enemy {
   constructor(){
     this.hp = 25;
@@ -5,6 +7,6 @@ export default class Enemy {
   }
 
   enemyAttack() {
-    return Math.floor((Math.random() * 6) + 1);
+    return Math.floor((Math.random() * 15) + 4);
   }
 }

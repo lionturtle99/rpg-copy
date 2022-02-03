@@ -5,8 +5,8 @@ export default class Game {
   constructor() {
     this.turn = true;
     this.player = new Player();
-    this.enemy1 = new Enemy("Sludge");
-    this.enemy2 = new Enemy("Grumbles");
+    // this.enemy1 = new Enemy("Sludge");
+    this.enemy = new Enemy("Grumbles");
   }
 }
 
