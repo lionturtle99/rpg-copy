@@ -1,6 +1,6 @@
 # _title_
 
-#### By _**Liam Eller**_
+#### By _**Liam Eller** **Chase Stokes** **Isaac Overstreet** **Zachary Green**_
 
 #### _brief description_
 
@@ -39,4 +39,4 @@ _None_
 
 _[MIT](https://opensource.org/licenses/MIT)_
 
-Copyright (c) _date:_ _by: Liam Eller_
+Copyright (c) _date:_ _by: Isaac Overstreet_
