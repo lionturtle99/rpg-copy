@@ -90,29 +90,68 @@ button:hover {
   margin:auto;
 }
 
+#character-display {
+  font-size: 30px;
+  margin-top: 2%;
+}
+
 .flash-text {
   text-align: center;
   color: rgb(255, 251, 0);
   text-shadow: 1px 2px 3px rgb(231, 158, 0);
 }
 
-/* #pal {
-  display:none;
+#sword-img {
+  image-rendering: pixelated;
+  width: 500px;
+  height: 500px;
+  margin-bottom: -28%;
+  margin-top: -15%;
+}
+
+#pal {
   text-align: center;
-  margin-top:50%;
+  margin-top:20%;
+  
+}
+#pal img {
+  margin-bottom: 35px;
+  width: 550px;
+  height: 550px;
+  image-rendering: pixelated;
+  margin-right: 50%;
 }
 
 #mag {
-  display:none;
   text-align: center;
-  margin-top:50%;
+  margin-top: 20%;
+}
+#mag img{
+  margin-bottom: 35px;
+  image-rendering: pixelated;
+  width: 700px;
+  height: 700px;
+  image-rendering: pixelated;
+  margin-right: 40%;
 }
 
 #bru {
-  display:none;
   text-align: center;
-  margin-top:50%;
-} */
+  margin-top: 10%;
+}
+#bru img{
+  margin-bottom: 35px;
+  image-rendering: pixelated;
+  width: 500px;
+  height: 500px;
+  image-rendering: pixelated;
+  margin-right: 50%;
+}
+
+#sword {
+  margin-top: 2%;
+  margin-left: 20%;
+}
 
 #buy-hp-potion {
   display: none;
@@ -122,7 +161,7 @@ button:hover {
   display: none;
 }
 
-#buy-hp-elixer {
+#buy-elixer {
   display: none;
 }
 
@@ -189,3 +228,63 @@ button:hover {
   margin-left: 10%;
   margin-right: 10%;
 }
+
+.items {
+  
+}
+
+#item-shop {
+  text-align: center;
+}
+
+.buy {
+  margin-top: 5%;
+}
+
+#choose-dungeon, #choose-town, #choose-cave {
+  box-shadow: 10px 10px 10px rgb(0, 0, 0);
+  border: 2px 2px 2px rgb(201, 59, 59);
+}
+
+#inn {
+  text-align: center;
+}
+
+.inn-text {
+  background-color: rgba(73, 73, 73, 0.582);
+  border-radius: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.buy {
+ 
+}
+
+.exit-inn {
+  
+}
+
+#floor1, #floor2, #floor3, #level1, #level2, #level3 {
+  text-align: center;
+
+}
+
+.f1text, .f2text, .f3text, .lvl1text, .lvl3text, .lvl2text {
+  background-color: rgba(73, 73, 73, 0.582);
+  border-radius: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 3%;
+}
+
+.f1head {
+  margin-top: 5%;
+  font-size: 40px;
+  margin-bottom: 5%;
+}
+
+#flash {
+  margin-right: 93%;
+}
+

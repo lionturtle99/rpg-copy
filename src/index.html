@@ -18,7 +18,7 @@
         <form id="submit-character">
           <div>
             <h4>Please Enter Your Player's Name</h4>
-            <input type="text" id="user-name">
+            <input type="text" id="user-name" required>
           </div>
           <br>
           <br>
@@ -26,8 +26,7 @@
             <div class="col-md-6">
               <div class="choosecharacter">
                 <h3>Choose your character:</h3>
-                <select name="character" id="character">
-                  <option value="0">-Select Your Character-</option>
+                <select name="character" id="character" required>
                   <option value="Paladin">Paladin</option>
                   <option value="Mage">Mage</option>
                   <option value="Brute">Brute</option>
@@ -39,8 +38,7 @@
             <div class="col-md-6">
               <div class="chooseweapon">
                 <h3>Choose your weapon:</h3>
-                <select name="weapon" id="weapon">
-                  <option value="0">-Select Your Weapon-</option>
+                <select name="weapon" id="weapon" required>
                   <option value="1">Sword</option>
                   <option value="2">Staff</option>
                   <option value="3">Axe</option>
@@ -56,12 +54,16 @@
 
       <div class="page2">
         <h3 id="character-display"></h3>
-        <p class="flash-text">HP:<span id="player-hp"></span></p>
-        <p class="flash-text">MP:<span id="player-mp"></span></p>
-        <p class="flash-text">STR:<span id="player-str"></span></p>
-        <p class="flash-text">INT:<span id="player-int"></span></p>
-        <p class="flash-text">AGI:<span id="player-agi"></span></p>
+        <p class="flash-text" id="flash">Name: <span id="player-name"></span></p>
+        <p class="flash-text" id="flash">HP:<span id="player-hp"></span></p>
+        <p class="flash-text" id="flash">MP:<span id="player-mp"></span></p>
+        <p class="flash-text" id="flash">STR:<span id="player-str"></span></p>
+        <p class="flash-text" id="flash">INT:<span id="player-int"></span></p>
+        <p class="flash-text" id="flash">AGI:<span id="player-agi"></span></p>
         <button id="endviewingcharacter">Next</button>
+        <div id="sword"></div>
+        <div id="staff"></div>
+        <div id="axe"></div>
         <div id="pal">
           <img src="https://cdn.discordapp.com/attachments/938476345514655784/938519124382974012/paladin.png">
           <p class="flash-text">--The Paladin are noble warriors who have spent their days training in the path of enlightment and justice. These devout missionaries of justice harness the divine powers of the Godess Ashra to smite evil foes--</p>
@@ -161,65 +163,60 @@
           <div>
             <h2 class="shop-welcome">Welcome To The Shop</h2>
             <p class="shop-keep"><strong>Shop Keeper:</strong> Hello traveller. Want to take a look at my wares?</p>
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
             <div class="items">
+              <p id="buy-hp-potion">Health Potion huh? That will be 5 zenny</p>
+              <p id="buy-mp-potion">Mana Potion huh? That will be 10 zenny</p>
+              <p id="buy-elixer">Elixer huh? That will be 25 zenny</p>
               <select name="items" id="items">
                 <option value="0">Mana Potion</option>
                 <option value="1">Health Potion</option>
                 <option value="2">Elixer</option>
               </select>
-              <button type="button" id="use-item">Select</button>
-              <p id="buy-hp-potion">Health Potion huh? That will be 5 zenny</p>
-              <p id="buy-mp-potion">Mana Potion huh? That will be 10 zenny</p>
-              <p id="buy-elixer">Elixer huh? That will be 25 zenny</p>
-              <button class="buy">Pay?</button>
-              <button class="no-buy">Decline</button>
+              <button id="shop-btn" class="buy">Pay?</button>
+              <button id="shop-btn" class="no-buy">Decline</button>
             </div>
             <br>
-            <button class="exit">Exit</button>
+            <button id="leave" class="exit">Exit</button>
           </div>
         </div>
         <div id="inn">
           <h2 class="inn-welcome">Welcome To The Inn</h2>
-          <p><strong>Inn Keeper:</strong>Welcome weary traveller. Would you like to stay with us? It's 5 Zenny per night. Breakfast is included</p>
-          <div class="row">
-            <div class="col-md-4">
-            <button class="buy" type="button">Pay?</button>
-            </div>
-            <div class="col-md-4">
-            <button class="no-buy" type="button">Decline</button>
-            </div>
-            <div class="col-md-4">
-            <button class="exit-inn" type="button">Exit</button>
-            </div>
-          </div>
+          <p class="inn-text"><strong>Inn Keeper:</strong>Welcome weary traveller. Would you like to stay with us? It's 5 Zenny per night. Breakfast is included</p>  
+          <button class="buy" type="button">Pay?</button>
+          <button class="no-buy" type="button">Decline</button>
+          <button class="exit-inn" type="button">Exit</button>
         </div>
 
         <!-- dungeon -->
         <div id="dungeon">
-          <h2>Grimsythe Fortress</h2>
           <div id="floor1">
+            <h2 class="f1head">Grimsythe Fortress</h2>
             <!-- display text floor 1 -->
-            <p>You have entered the Grimsythe Fortress...</p>
-            <p>The repugnent smell of blood and mold fills the air. You feel a chill run down your spine and get that feeling that <em>something</em>... <strong><em>somewhere</em><strong>... is watching you...</p>
-            <p>You grip your weapon tightly. Sounds of howling wind creep through broken winds and dark corridors</p>
+            <p class="f1text">You have entered the Grimsythe Fortress...</p>
+            <p class="f1text">The repugnent smell of blood and mold fills the air. You feel a chill run down your spine and get that feeling that <em>something</em>... <strong><em>somewhere</em><strong>... is watching you...</p>
+            <p class="f1text">You grip your weapon tightly. Sounds of howling wind creep through broken winds and dark corridors</p>
             <!-- display text floor 1 -->
             <button class="exit-fort" type="button">Exit</button>
             <button class="move-ahead" type="button">Proceed</button>
           </div>
           <div id="floor2">
+            <h2 class="f1head">Grimsythe Fortress</h2>
             <!-- display text floor 2 -->
-            <p>Moving forward, you now enter into what looks like a dining hall. The table is set with plates, silverware and cups. The spread over the table however; is rotten. From the looks of it, the count of this fortress and his mean were invaded before they could have their supper.</p>
-            <p>You begin to wonder to yourself. What could of happened to the count and his men? What foul creature or evil force now haunts this once noble fortess?</p>
-            <p>You hear a loud crash coming from the Count's main chamber! You loud screams of some foreign beast echo through the dining hall!! You get the feeling you are about to get the answer to your questions very soon. You gather up your courage and prepare yourself to investigate.</p>
+            <p class="f2text">Moving forward, you now enter into what looks like a dining hall. The table is set with plates, silverware and cups. The spread over the table however; is rotten. From the looks of it, the count of this fortress and his mean were invaded before they could have their supper.</p>
+            <p class="f2text">You begin to wonder to yourself. What could of happened to the count and his men? What foul creature or evil force now haunts this once noble fortess?</p>
+            <p class="f2text">You hear a loud crash coming from the Count's main chamber! You loud screams of some foreign beast echo through the dining hall!! You get the feeling you are about to get the answer to your questions very soon. You gather up your courage and prepare yourself to investigate.</p>
             <!-- display text floor 2 -->
             <button class="go-back" type="button">Go back to floor 1?</button>
             <button class="move-ahead2" type="button">Proceed</button>
           </div>
           <div id="floor3">
+            <h2 class="f1head">Grimsythe Fortress</h2>
             <!-- display text floor 3 -->
-            <p>The Count's chamber is littered with golden and glittering items strewn about the floor, some of these covered in blood. You look up to meet eyes with the thing making the loud noises that echoed through the dining room and your mind.</p>
-            <p>It is a <em>place-holder</em>!!!! It is now clear to you why people and travellers of the region have been talking about a mugger that has been killing and pillages valuables. This must be that mugger!</p>
-            <p>The creature stands to full length, now towering over you. You recite an ancient prayer as you preapre for a challenging battle.</p>
+            <p class="f3text">The Count's chamber is littered with golden and glittering items strewn about the floor, some of these covered in blood. You look up to meet eyes with the thing making the loud noises that echoed through the dining room and your mind.</p>
+            <p class="f3text">It is a <em>place-holder</em>!!!! It is now clear to you why people and travellers of the region have been talking about a mugger that has been killing and pillages valuables. This must be that mugger!</p>
+            <p class="f3text">The creature stands to full length, now towering over you. You recite an ancient prayer as you prepare for a challenging battle.</p>
             <!-- display text floor 3 -->
             <button class="go-back1" type="button">Go back to floor 2?</button>
             <button class="back-to-home" type="button">Back To Destination Menu</button>
@@ -228,31 +225,34 @@
         <!-- cave -->
         <div id="cave">
           <div id="level1">
+            <h2 class="f1head">Chrisym-Stone Mines</h2>
             <!-- display text level1 -->
-            <p>You have entered into the mouth of Chrisym-Stone Mines...</p>
-            <p>A purple light glitters the walls of this cavern. Large crystals and sparkling rocks catch your eye. This mine, now abandoned, was once the main source of income for this region. Chrisym, the left over energy of dragons in crystalized form. This rare mineral is used to make magical weapons and armor, as well as in concoctions for rare potions and magical items.</p>
-            <p>The gear of the miners can still be seen in the light of these magical stones.</p>
-            <p>A part of you begins to wonder why this mine was abandoned. The thought of monsters or cave-ins puts you on edge.</p>
-            <p>You gather up your courage and grip your weapon tightly as you prepare to delve deeper and deeper.</p>
+            <p class="lvl1text">You have entered into the mouth of Chrisym-Stone Mines...</p>
+            <p class="lvl1text">A purple light glitters the walls of this cavern. Large crystals and sparkling rocks catch your eye. This mine, now abandoned, was once the main source of income for this region. Chrisym, the left over energy of dragons in crystalized form. This rare mineral is used to make magical weapons and armor, as well as in concoctions for rare potions and magical items.</p>
+            <p class="lvl1text">The gear of the miners can still be seen in the light of these magical stones.</p>
+            <p class="lvl1text">A part of you begins to wonder why this mine was abandoned. The thought of monsters or cave-ins puts you on edge.</p>
+            <p class="lvl1text">You gather up your courage and grip your weapon tightly as you prepare to delve deeper and deeper.</p>
             <!-- display text level1 -->
             <button class="exit-cave" type="button">Exit</button>
             <button class="move-ahead-cave" type="button">Proceed</button>
           </div>
           <div id="level2">
+            <h2 class="f1head">Chrisym-Stone Mines</h2>
             <!-- display text level2 -->
-            <p>Upon entering this room, you immediately realize that part of this mine has become flooded. You check around the cave for another path forward but quickly realize you may have to get wet to proceed.</p>
-            <p>Unsure of what could be inside of dark muddy body of water, a sense of uneasiness begins to overwhelm you. The liquid is viscous and sticks to your armor, but you are still free to move forward.</p>
-            <p>As you proceed the depth of this fluid grows deeper and deeper. Pretty soon you are up to your neck. After several minutes of wading through this disgusting marsh, you finally begin to climb higher. Ahead is a narrow passage way with a glowing green light coming from it's center. You don't know what lies ahead, but you are willing to press forward</p>
+            <p class="lvl2text">Upon entering this room, you immediately realize that part of this mine has become flooded. You check around the cave for another path forward but quickly realize you may have to get wet to proceed.</p>
+            <p class="lvl2text">Unsure of what could be inside of dark muddy body of water, a sense of uneasiness begins to overwhelm you. The liquid is viscous and sticks to your armor, but you are still free to move forward.</p>
+            <p class="lvl2text">As you proceed the depth of this fluid grows deeper and deeper. Pretty soon you are up to your neck. After several minutes of wading through this disgusting marsh, you finally begin to climb higher. Ahead is a narrow passage way with a glowing green light coming from it's center. You don't know what lies ahead, but you are willing to press forward</p>
             <!-- display text level2 -->
             <button class="go-back-cave" type="button">Go back to level 1?</button>
             <button class="move-ahead-cave2" type="button">Proceed</button>
           </div>
           <div id="level3">
+            <h2 class="f1head">Chrisym-Stone Mines</h2>
             <!-- display text level3 -->
-            <p>The narrow mouth of the cave opens up into a massive chamber. Inside the walls are glowing green with some sort of stone different than the others.</p>
-            <p>Suddenly a sort of portal opens up and a man cloked in foreign attire steps forth from it's mesmerizing spirals</p>
-            <p>This man is wearing a bandana. He asks you if you know where Otacon is, then if you know where they are holding Metal Gear. Unsure, you decline to answer.</p>
-            <p>The man hands you a strange weapon, and proceeds back into the portal. You dont remember the name he called it, but you decide to name it 'The Magic Missile'</p>
+            <p class="lvl3text">The narrow mouth of the cave opens up into a massive chamber. Inside the walls are glowing green with some sort of stone different than the others.</p>
+            <p class="lvl3text">Suddenly a sort of portal opens up and a man cloked in foreign attire steps forth from it's mesmerizing spirals</p>
+            <p class="lvl3text">This man is wearing a bandana. He asks you if you know where Otacon is, then if you know where they are holding Metal Gear. Unsure, you decline to answer.</p>
+            <p class="lvl3text">The man hands you a strange weapon, and proceeds back into the portal. You dont remember the name he called it, but you decide to name it 'The Magic Missile'</p>
             <!-- display text level3 -->
             <button class="go-back-cave1" type="button">Go back to level 2?</button>
             <button class="back-to-home-cave" type="button">Back To Destination Menu</button>

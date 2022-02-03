@@ -1,11 +1,11 @@
 export default class Player {
-  constructor(name, weapon, character) {
+  constructor(name, hp, mp, str, int, agi, weapon, character) {
     this.name = name;
-    this.hp = 50;
-    this.mp = 25;
-    this.str = 12;
-    this.int = 10;
-    this.agi = 10;
+    this.hp = hp;
+    this.mp = mp;
+    this.str = str;
+    this.int = int;
+    this.agi = agi;
     this.weapon = weapon;
     this.inventory = [];
     this.character = character;

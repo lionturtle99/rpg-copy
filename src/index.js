@@ -58,7 +58,7 @@ function attachContactListeners() {
 //   if (userChoice === "0") {
 //     $("#chest").show();
 //     addToInventory(lvl);
-//     // call a function to add item to their invventory
+//     // call a function to add item to their inventory
 //   } else if (userChoice === "1") {
 //     $("#arena").show();
 //     fight();
@@ -83,7 +83,70 @@ function attachContactListeners() {
 // };
 
 
+function displayStats() {
+  $("#character-display").html(game.player.character);
+  $("#player-name").html(game.player.name);
+  $("#player-hp").html(game.player.hp);
+  $("#player-mp").html(game.player.mp);
+  $("#player-str").html(game.player.str);
+  $("#player-int").html(game.player.int);
+  $("#player-agi").html(game.player.agi);
+}
 
+function displayWeapon() {
+  if (game.player.character === "Paladin" && game.player.weapon === "1") {
+    $("#sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
+  } else if (game.player.character === "Paladin" && game.player.weapon === "2") {
+    $("#staff").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
+  } else if (game.player.character === "Paladin" && game.player.weapon === "3") {
+    $("#axe").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
+  } else if (game.player.character === "Mage" && game.player.weapon === "1") {
+    $("#sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
+  } else if (game.player.character === "Mage" && game.player.weapon === "2") {
+    $("#staff").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
+  } else if (game.player.character === "Mage" && game.player.weapon === "3") {
+    $("#axe").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
+  } else if (game.player.character === "Brute" && game.player.weapon === "1") {
+    $("#sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
+  } else if (game.player.character === "Brute" && game.player.weapon === "2") {
+    $("#staff").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
+  } else if (game.player.character === "Brute" && game.player.weapon === "3") {
+    $("#axe").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
+  }
+}
+
+function displayHero() {
+  if (game.player.character === "Paladin") {
+    $("#mag").hide();
+    $("#bru").hide();
+    game.player.hp = 50;
+    game.player.mp = 25;
+    game.player.str = 12;
+    game.player.int = 10;
+    game.player.agi = 10;
+    displayStats();
+    console.log(game.player);
+  } else if (game.player.character === "Mage") {
+    console.log(game.player.character);
+    $("#pal").hide();
+    $("#bru").hide();
+    game.player.hp = 40;
+    game.player.mp = 40;
+    game.player.str = 6;
+    game.player.int = 30;
+    game.player.agi = 15;
+    displayStats();
+  } else if (game.player.character === "Brute") {
+    $("#mag").hide();
+    $("#pal").hide();
+    game.player.hp = 60;
+    game.player.mp = 25;
+    game.player.str = 16;
+    game.player.int = 0;
+    game.player.agi = 8;
+    displayStats();
+  }
+}
 
 
 
@@ -97,12 +160,11 @@ $(document).ready(function() {
     game.player.name = $("#user-name").val();
     game.player.weapon = $("#weapon").val();
     game.player.character = $("#character").val();
-    $("#character-display").html(game.player.character);
-    $("#player-hp").html(game.player.hp);
-    $("#player-mp").html(game.player.mp);
-    $("#player-str").html(game.player.str);
-    $("#player-int").html(game.player.int);
-    $("#player-agi").html(game.player.agi);
+    displayStats();
+    $("#page1").hide();
+    $(".page2").show();
+    displayWeapon();
+    displayHero();
   });
 
   $(".buy").on("click", function(){
@@ -120,35 +182,9 @@ $(document).ready(function() {
       $("#buy-elixer").show();
     }
   });
+  
 });
 
-//leave home creation page
-$("#create").on("click", function() {
-  $("#page1").hide();
-  $(".page2").show();
-  if (game.player.character === "Paladin") {
-    $("div#pal").show();
-    game.player.hp = 50;
-    game.player.mp = 25;
-    game.player.str = 12;
-    game.player.int = 10;
-    game.player.agi = 10;
-  } else if (game.player.character === "Mage") {
-    $("div#mag").show();
-    game.player.hp = 40;
-    game.player.mp = 40;
-    game.player.str = 6;
-    game.player.int = 30;
-    game.player.agi = 15;
-  } else if (game.player.character === "Brute") {
-    $("div#bru").show();
-    game.player.hp = 60;
-    game.player.mp = 25;
-    game.player.str = 16;
-    game.player.int = 0;
-    game.player.agi = 8;
-  }
-});
 //leave character viewing page
 $("#endviewingcharacter").on("click", function() {
   $(".page2").hide();
@@ -176,7 +212,21 @@ $("#choose-cave").on("click", function() {
 //manages town
 $("#enter-shop").on("click", function() {
   $("#item-shop").show();
+  $(".yes").show();
+  $(".no").show();
+  $(".items").hide();
   $("#town").hide();
+  $("#leave").hide();
+});
+$(".yes").on("click", function() {
+  $(".items").show();
+  $("#leave").show();
+  $(".yes").hide();
+  $(".no").hide();
+});
+$(".no").on("click", function () {
+  $("#item-shop").hide();
+  $("#town").show();
 });
 $(".exit").on("click", function() {
   $("#item-shop").hide();
