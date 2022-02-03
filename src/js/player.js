@@ -1,8 +1,8 @@
 export default class Player {
-  constructor(name, hp, mp, str, int, agi, weapon, character) {
+  constructor(name, str, int, agi, weapon, character) {
     this.name = name;
-    this.hp = hp;
-    this.mp = mp;
+    this.hp = 0;
+    this.mp = 0;
     this.str = str;
     this.int = int;
     this.agi = agi;
@@ -28,19 +28,25 @@ export default class Player {
     }
     return roll;
   }
-  useItem() {
+  useItem(potion) {
     let that = this;
     this.inventory.forEach(function(item){
-      if (item === "1") {
+      if (item  === potion && potion === "Health Potion") {
         that.hp += 10;
-      } else if (item === "0") {
+        let itemIndex = that.inventory.indexOf(potion)
+        that.inventory.splice(itemIndex, 1)
+      }
+      if (item  === potion && potion === "Mana Potion") {
         that.mp += 10;
-      } else if (item === "2") {
+        let itemIndex = that.inventory.indexOf(potion)
+        that.inventory.splice(itemIndex, 1)
+      }
+      if (item === potion && potion === "Elixer") {
         that.hp += 5;
         that.mp += 5;
+        let itemIndex = that.inventory.indexOf(potion)
+        that.inventory.splice(itemIndex, 1)
       }
     });
   }
-
-  
 }

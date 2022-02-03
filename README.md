@@ -1,20 +1,22 @@
-# _title_
+# _RPG_
 
 #### By _**Liam Eller** **Chase Stokes** **Isaac Overstreet** **Zachary Green**_
 
 #### _brief description_
+This project is a simple text based RPG with 3 dicferent characters and 3 different weapon selections for the characters.
 
 ## Technologies Used
 
-* _Javascript_
-* _html5_
-* _css_
+* _JavaScript_
+* _HTML_
+* _CSS_
+* _Bootstrap_
+* _Popper.js_
 * _npm_
-* _webpack_
-* _jest_
-* _lint_
-* _babel_
-* _git_
+* _Webpack_
+* _Jest_
+* _ESLint_
+* _Babel_
 
 
 ## Description

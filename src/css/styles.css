@@ -54,7 +54,7 @@ button:hover {
   display: initial;  
 }
 
-.page2, #battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen, #item-shop, #inn, #floor2, #floor3, #level2, #level3 {
+.page2, #battle-screen, #btns-battle, #results-screen, #item-shop, #inn, #floor2, #floor3, #level2, #level3, #return-attack, #items {
   display:none;
 }
 
@@ -81,13 +81,13 @@ button:hover {
 }
 
 .page2 div img {
-  width:20%;
-  display:block;
+  /* width:20%; */
+  /* display:block; */
   position:absolute;
   left:0;
   right:0;
   bottom:0;
-  margin:auto;
+  /* margin:auto; */
 }
 
 #character-display {
@@ -97,60 +97,95 @@ button:hover {
 
 .flash-text {
   text-align: center;
+  margin-right: 70%;
   color: rgb(255, 251, 0);
   text-shadow: 1px 2px 3px rgb(231, 158, 0);
 }
 
 #sword-img {
   image-rendering: pixelated;
-  width: 500px;
-  height: 500px;
-  margin-bottom: -28%;
-  margin-top: -15%;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  margin-left: 40%;
+  margin-bottom: 11%;
+}
+#axe-img {
+  image-rendering: pixelated;
+  width: 400px;
+  height: 400px;
+  margin-bottom: 11%;
+  margin-left: 34%;
+}
+#staff-img {
+  image-rendering: pixelated;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 11%;
+  margin-left: 43%;
 }
 
-#pal {
+.pal {
   text-align: center;
-  margin-top:20%;
+  margin-top:10%;
   
 }
-#pal img {
+.pal img {
   margin-bottom: 35px;
   width: 550px;
   height: 550px;
   image-rendering: pixelated;
-  margin-right: 50%;
+  margin-left: 10%;
 }
 
-#mag {
+.mag {
   text-align: center;
-  margin-top: 20%;
-}
-#mag img{
-  margin-bottom: 35px;
-  image-rendering: pixelated;
-  width: 700px;
-  height: 700px;
-  image-rendering: pixelated;
-  margin-right: 40%;
+  margin-top: 8%;
 }
 
-#bru {
-  text-align: center;
-  margin-top: 10%;
-}
-#bru img{
+.mag img{
   margin-bottom: 35px;
-  image-rendering: pixelated;
   width: 500px;
   height: 500px;
   image-rendering: pixelated;
-  margin-right: 50%;
+  margin-left: 15%;
 }
 
-#sword {
-  margin-top: 2%;
+.bru {
+  text-align: center;
+  margin-top: 7%;
+}
+
+.bru img{
+  margin-bottom: 35px;
+  width: 400px;
+  height: 400px;
+  image-rendering: pixelated;
   margin-left: 20%;
+}
+
+.battle-weapons {
+  margin-right: 30%;
+}
+
+#enemy1 {
+  width: 600px;
+  height: 600px;
+  margin-top: 14%;
+  image-rendering: pixelated;
+}
+
+#enemy1 {
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
 }
 
 #buy-hp-potion {
@@ -164,10 +199,6 @@ button:hover {
 #buy-elixer {
   display: none;
 }
-
-/* #paladin-img, #brute-img, #mage-img {
-  display: none;
-} */
 
 .hub {
   text-align: center;
@@ -229,10 +260,6 @@ button:hover {
   margin-right: 10%;
 }
 
-.items {
-  
-}
-
 #item-shop {
   text-align: center;
 }
@@ -257,9 +284,9 @@ button:hover {
   margin-right: 10%;
 }
 
-.buy {
- 
-}
+/* .buy {
+  
+} */
 
 .exit-inn {
   
@@ -284,7 +311,30 @@ button:hover {
   margin-bottom: 5%;
 }
 
-#flash {
+.flash {
   margin-right: 93%;
 }
 
+#broke {
+  display:none;
+}
+
+.card {
+  background-color: greenyellow;
+  height: 10px;
+  border-radius: 20px;
+}
+
+.battle-images {
+  margin-right: 70%;
+}
+
+.items {
+  float: left;
+}
+
+#btns-battle {
+  text-align: center;
+  margin-left: 40%;
+  margin-bottom: 10%;
+}

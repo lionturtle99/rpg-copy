@@ -20,22 +20,6 @@ function attachContactListeners() {
   });
 }
 
-// function for fighting an enemy
-// battle = () => {
-//   let pAttack = game.player.attackRoll();
-//   let eAttack = game.enemy.enemyAttack();
-//   if (game.turn === true) {
-//     game.enemy.hp -= pAttack;
-//     game.turn = !game.turn;
-//   } 
-//   else if (game.turn === false) {
-//     game.player.hp -= eAttack;
-//     game.turn = !game.turn;
-//   }
-// };
-
-
-
 // // function for adding a typing effect to the DOM
 // async function typeWriter(sentence, outputId) {
 //   const letters = sentence.split("");
@@ -82,54 +66,59 @@ function attachContactListeners() {
 //   }
 // };
 
-
 function displayStats() {
-  $("#character-display").html(game.player.character);
-  $("#player-name").html(game.player.name);
-  $("#player-hp").html(game.player.hp);
-  $("#player-mp").html(game.player.mp);
+  $(".character-display").html(game.player.character);
+  $(".player-name").html(game.player.name);
+  $(".player-hp").html(game.player.hp);
+  $(".player-mp").html(game.player.mp);
   $("#player-str").html(game.player.str);
   $("#player-int").html(game.player.int);
   $("#player-agi").html(game.player.agi);
 }
 
+function displayInventory() {
+  $("#bank").html(game.player.currency);
+  $("#inventory").html("");
+  game.player.inventory.forEach(function(item){
+    $("#inventory").append("<li>" + item + "</li>");
+  });
+}
+
 function displayWeapon() {
   if (game.player.character === "Paladin" && game.player.weapon === "1") {
-    $("#sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
+    $(".sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
   } else if (game.player.character === "Paladin" && game.player.weapon === "2") {
-    $("#staff").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
+    $(".staff").append("<img id=staff-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
   } else if (game.player.character === "Paladin" && game.player.weapon === "3") {
-    $("#axe").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
+    $(".axe").append("<img id=axe-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
   } else if (game.player.character === "Mage" && game.player.weapon === "1") {
-    $("#sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
+    $(".sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
   } else if (game.player.character === "Mage" && game.player.weapon === "2") {
-    $("#staff").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
+    $(".staff").append("<img id=staff-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
   } else if (game.player.character === "Mage" && game.player.weapon === "3") {
-    $("#axe").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
+    $(".axe").append("<img id=axe-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
   } else if (game.player.character === "Brute" && game.player.weapon === "1") {
-    $("#sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
+    $(".sword").append("<img id=sword-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490913066483773/sword1.png>");
   } else if (game.player.character === "Brute" && game.player.weapon === "2") {
-    $("#staff").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
+    $(".staff").append("<img id=staff-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490887221182504/staff1.png>");
   } else if (game.player.character === "Brute" && game.player.weapon === "3") {
-    $("#axe").append("<img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
+    $(".axe").append("<img id=axe-img src=https://" + "cdn.discordapp.com/attachments/938476345514655784/938490862726438942/axe1.png> ");
   }
 }
 
 function displayHero() {
   if (game.player.character === "Paladin") {
-    $("#mag").hide();
-    $("#bru").hide();
+    $(".mag").hide();
+    $(".bru").hide();
     game.player.hp = 50;
     game.player.mp = 25;
     game.player.str = 12;
     game.player.int = 10;
     game.player.agi = 10;
     displayStats();
-    console.log(game.player);
   } else if (game.player.character === "Mage") {
-    console.log(game.player.character);
-    $("#pal").hide();
-    $("#bru").hide();
+    $(".pal").hide();
+    $(".bru").hide();
     game.player.hp = 40;
     game.player.mp = 40;
     game.player.str = 6;
@@ -137,8 +126,8 @@ function displayHero() {
     game.player.agi = 15;
     displayStats();
   } else if (game.player.character === "Brute") {
-    $("#mag").hide();
-    $("#pal").hide();
+    $(".mag").hide();
+    $(".pal").hide();
     game.player.hp = 60;
     game.player.mp = 25;
     game.player.str = 16;
@@ -151,39 +140,111 @@ function displayHero() {
 
 
 
-$(document).ready(function() {
-  let items = $("#items").val();
-  $("").html(game.player.name);
-  attachContactListeners();
-  $("#submit-character").submit(function(event){
-    event.preventDefault();
-    game.player.name = $("#user-name").val();
-    game.player.weapon = $("#weapon").val();
-    game.player.character = $("#character").val();
-    displayStats();
-    $("#page1").hide();
-    $(".page2").show();
-    displayWeapon();
-    displayHero();
-  });
-
-  $(".buy").on("click", function(){
-    if (items === "0") {
-      game.player.inventory.push("0");
-      game.player.currency - 10;
-      $("#buy-mp-potion").show();
-    } else if (items === "1") {
-      game.player.inventory.push("1");
-      game.player.currency - 5;
-      $("#buy-hp-potion").show();
-    } else if (items === "2") {
-      game.player.inventory.push("2");
-      game.player.currency - 25;
-      $("#buy-elixer").show();
-    }
-  });
-  
+$("").html(game.player.name);
+attachContactListeners();
+$("#submit-character").submit(function(event){
+  event.preventDefault();
+  game.player.name = $("#user-name").val();
+  game.player.weapon = $("#weapon").val();
+  game.player.character = $("#character").val();
+  displayStats();
+  $("#page1").hide();
+  $(".page2").show();
+  displayWeapon();
+  displayHero();
 });
+
+
+// battle dungeon page
+$(".battle-dungeon").submit(function(event) {
+  event.preventDefault();
+  // game.player.name = name;
+  // game.player.weapon = weapon;
+  // game.player.character = character;
+  $("#dungeon").hide();
+  $("#battle-screen").show();
+  $("#btns-battle").show();
+  $("#battle-items").hide();
+  displayHero();
+  $("#attack").on("click", function() {
+    battle();
+    displayStats();
+    setTimeout(battle(), 1000);
+    displayStats();
+    console.log(game.enemy1.hp);
+    console.log(game.player.attackRoll());
+  });
+});
+$("#item-use").on("click", function(){
+  $("#btns-battle").hide();
+  $("#battle-items").show();
+  $("#return-attack").show();
+});
+$("#return-attack").on("click", function(){
+  $("#btns-battle").show();
+  $("#battle-items").hide();
+  $("#return-attack").hide();
+});
+$("#battle-item").submit(function(event){
+  event.preventDefault();
+  let potion = $("#battle-items").val();
+  console.log(potion)
+  console.log(game.player.inventory)
+  game.player.useItem(potion);
+  displayStats();
+}); 
+
+function battle() {
+  let pAttack = game.player.attackRoll();
+  let eAttack = game.enemy.enemyAttack();
+  if (game.turn === true) {
+    game.enemy.hp -= pAttack;
+    game.turn = !game.turn;
+  } 
+  else if (game.turn === false) {
+    game.player.hp -= eAttack;
+    game.turn = !game.turn;
+  }
+}
+
+// functions for buying an item
+$("#buy-items").submit(function(event){
+  let items = $("#items").val();
+  event.preventDefault();
+
+  if (game.player.currency >= 2) {
+    if (items === "Elixir") {
+      game.player.inventory.push(items);
+      game.player.currency -= 2;
+      $("#buy-elixir").show();
+      $("#buy-hp-potion").hide();
+      $("#buy-mp-potion").hide();
+      $("#items").val("");
+    } else if (items === "Health Potion") {
+      game.player.inventory.push(items);
+      game.player.currency -= 2;
+      $("#buy-hp-potion").show();
+      $("#buy-elixir").hide();
+      $("#buy-mp-potion").hide();
+      $("#items").val("");
+    } else if (items === "Mana Potion") {
+      game.player.inventory.push(items);
+      game.player.currency -= 2;
+      $("#buy-mp-potion").show();
+      $("#buy-hp-potion").hide();
+      $("#buy-elixir").hide();
+      $("#items").val("");
+    } 
+} else {
+  $("#broke").show();
+  $("#buy-hp-potion").hide();
+  $("#buy-elixir").hide();
+  $("#buy-mp-potion").hide();
+}
+  displayInventory();
+});
+
+
 
 //leave character viewing page
 $("#endviewingcharacter").on("click", function() {
@@ -211,6 +272,7 @@ $("#choose-cave").on("click", function() {
 });
 //manages town
 $("#enter-shop").on("click", function() {
+  displayInventory();
   $("#item-shop").show();
   $(".yes").show();
   $(".no").show();
@@ -249,10 +311,11 @@ $(".move-ahead").on("click", function() {
   $("#floor1").hide();
   $("#floor2").show();
 });
-$(".exit-fort").on("click", function () {
-  $("#dungeon").hide();
-  $("#map-hub").show();
-});
+// $(".battle-dungeon").on("click", function () {
+//   $("#dungeon").hide();
+//   $("#battle-screen").show();
+  
+// // });
 $(".go-back").on("click", function () {
   $("#floor2").hide();
   $("#floor1").show();
