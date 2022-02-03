@@ -76,7 +76,7 @@ button:hover {
   text-align: center;
 }
 
-.page2 {
+.page2 div {
   position: relative;
 }
 
@@ -96,25 +96,35 @@ button:hover {
   text-shadow: 1px 2px 3px rgb(231, 158, 0);
 }
 
-#pal {
+/* #pal {
   display:none;
   text-align: center;
-  /* margin-top:50%; */
+  margin-top:50%;
 }
 
 #mag {
   display:none;
   text-align: center;
-  /* margin-top:50%; */
+  margin-top:50%;
 }
 
 #bru {
   display:none;
   text-align: center;
-  /* margin-top:50%; */
+  margin-top:50%;
+} */
+
+#buy-hp-potion {
+  display: none;
 }
 
+#buy-mp-potion {
+  display: none;
+}
 
+#buy-hp-elixer {
+  display: none;
+}
 
 /* #paladin-img, #brute-img, #mage-img {
   display: none;
@@ -158,4 +168,24 @@ button:hover {
   padding: 15px;
   margin-left: 20%;
   margin-right: 20%;
+}
+
+.inn-welcome {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.shop-welcome {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.shop-keep {
+  text-align: center;
+  background-color: rgba(73, 73, 73, 0.582);
+  border-radius: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
 }

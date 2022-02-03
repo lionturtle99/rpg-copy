@@ -72,7 +72,7 @@
         </div>
         <div id="bru">
           <img src="https://cdn.discordapp.com/attachments/938476345514655784/938527512231809134/brute.png">
-          <p class="flash-text" id="bru">--The Brute are monsterous warriors who hail from the region of Asgorath. A nation obsessed with war and honor. These proud fighters are eager to join any party going out on dangerous voyages. They are often the first to charge into battle--</p>
+          <p class="flash-text">--The Brute are monsterous warriors who hail from the region of Asgorath. A nation obsessed with war and honor. These proud fighters are eager to join any party going out on dangerous voyages. They are often the first to charge into battle--</p>
         </div>
       </div>
 
@@ -159,15 +159,15 @@
         </div>
         <div id="item-shop">
           <div>
-            <p><strong>Shop Keeper:</strong> Hello traveller. Want to take a look at my wares?</p>
+            <h2 class="shop-welcome">Welcome To The Shop</h2>
+            <p class="shop-keep"><strong>Shop Keeper:</strong> Hello traveller. Want to take a look at my wares?</p>
             <div class="items">
-              <h3>Items:</h3>
               <select name="items" id="items">
                 <option value="0">Mana Potion</option>
                 <option value="1">Health Potion</option>
                 <option value="2">Elixer</option>
               </select>
-              <button type="button" id="use-item">Use</button>
+              <button type="button" id="use-item">Select</button>
               <p id="buy-hp-potion">Health Potion huh? That will be 5 zenny</p>
               <p id="buy-mp-potion">Mana Potion huh? That will be 10 zenny</p>
               <p id="buy-elixer">Elixer huh? That will be 25 zenny</p>
@@ -179,13 +179,21 @@
           </div>
         </div>
         <div id="inn">
-          <button class="exit-inn" type="button">Exit</button>
-          <div>
-            <p><strong>Inn Keeper:</strong>Welcome weary traveller. Would you like to stay with us? It's 5 Zenny per night. Breakfast is included</p>
+          <h2 class="inn-welcome">Welcome To The Inn</h2>
+          <p><strong>Inn Keeper:</strong>Welcome weary traveller. Would you like to stay with us? It's 5 Zenny per night. Breakfast is included</p>
+          <div class="row">
+            <div class="col-md-4">
             <button class="buy" type="button">Pay?</button>
+            </div>
+            <div class="col-md-4">
             <button class="no-buy" type="button">Decline</button>
+            </div>
+            <div class="col-md-4">
+            <button class="exit-inn" type="button">Exit</button>
+            </div>
           </div>
         </div>
+
         <!-- dungeon -->
         <div id="dungeon">
           <h2>Grimsythe Fortress</h2>
