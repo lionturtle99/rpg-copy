@@ -1,1 +1,191 @@
+body {
+	font-family: "Press Start 2P", monospace;
+  /* color: #ffffff; */
+  background-color: #503535a8;
+  /* background-image: url(); */
+  /* text-align: center; */
+}
 
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-image: url("https://media.discordapp.net/attachments/938476345514655784/938551098652897340/pixel-sun.png");
+  background-image: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px inset rgb(177, 35, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  margin-top: 3%;
+  color: rgb(0, 212, 0);
+  text-shadow: 3px 2px 1px green;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
+h4 {
+  margin-top: 5%;
+  text-align: center;
+}
+
+button {
+  background-color: rgba(71, 61, 139, 0.685);
+  color: rgba(224, 75, 104, 0.699);
+  text-align: center;
+}
+
+button:hover {
+  color: crimson;
+  text-shadow: 1px 2px 3px red;
+}
+
+#submit-character {
+  display: initial;  
+}
+
+.page2, #battle-screen, #player-stats, #attack-defend, #enemy-turn, #results-screen, #item-shop, #inn, #floor2, #floor3, #level2, #level3 {
+  display:none;
+}
+
+#map-hub, #town, #dungeon, #cave {
+  display:none;
+}
+
+.chooseweapon {
+  float: left;
+  /* margin-right: 20%; */
+}
+
+.choosecharacter {
+  float: right;
+  /* margin-left: 20%; */
+}
+
+#page1 {
+  text-align: center;
+}
+
+.page2 div {
+  position: relative;
+}
+
+.page2 div img {
+  width:20%;
+  display:block;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+}
+
+.flash-text {
+  text-align: center;
+  color: rgb(255, 251, 0);
+  text-shadow: 1px 2px 3px rgb(231, 158, 0);
+}
+
+/* #pal {
+  display:none;
+  text-align: center;
+  margin-top:50%;
+}
+
+#mag {
+  display:none;
+  text-align: center;
+  margin-top:50%;
+}
+
+#bru {
+  display:none;
+  text-align: center;
+  margin-top:50%;
+} */
+
+#buy-hp-potion {
+  display: none;
+}
+
+#buy-mp-potion {
+  display: none;
+}
+
+#buy-hp-elixer {
+  display: none;
+}
+
+/* #paladin-img, #brute-img, #mage-img {
+  display: none;
+} */
+
+.hub {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 40px;
+}
+
+.map-hub {
+  margin-top: 25%;
+}
+
+#town {
+  text-align: center;
+}
+
+.town-header {
+  margin-top: 5%;
+  font-size: 40px;
+}
+
+.town-info {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  border-radius: 10px;
+}
+
+.town-bg {
+  background-color: rgba(73, 73, 73, 0.582);
+}
+
+.btn-bg {
+  background-color: rgb(48, 40, 40);
+  padding: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.inn-welcome {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.shop-welcome {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.shop-keep {
+  text-align: center;
+  background-color: rgba(73, 73, 73, 0.582);
+  border-radius: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
