@@ -27,9 +27,15 @@ Chrisym-Stone. Due to unfortunate events the Count no longer lives and the kingd
 small city. The town's folk are terrified of going into his fortress north of the city and tales of monsters
 and ghosts permeate the streets`;
 
-const dungeonFloor1 = ``;
-const dungeonFloor1Id = "";
+const dungeonFloor1Id = ".f1text";
+const dungeonFloor1 = `You have entered the Grimsythe Fortress...
+The repugnant smell of blood and mold fills the air. You feel a chill run down your spine
+and get that feeling that... somewhere... is watching you...
+You grip your weapon tightly. Sounds of howling wind creep through broken winds and dark
+  corridors`;
 
+const innKeeperId = "";
+const innKeeper = ``;
 
 // function for adding a typing effect to the DOM
 async function typeWriter(sentence, outputId) {
@@ -148,22 +154,26 @@ $(".battle-dungeon").submit(function(event) {
   displayHero();
   displayStats();
   $(".attack").on("click", function() {
+    $(".attack").hide();
     setTimeout(function(){
+        $(".attack").show();
+    }, 2000)
       $('#enemy1').fadeOut();
       $('#enemy1').fadeIn();
       $('#enemy1').fadeOut();
       $('#enemy1').fadeIn();
       battle();
       displayStats();
-      battle();
-      displayStats();
+      setTimeout(function() {
+        battle();
+        displayStats();
+      }, 1000)
       battleResult();
       console.log(game.player.str)
       console.log(game.player.attackRoll())
       console.log(game.enemy.hp + "enemy hp");
       console.log(game.player.attackRoll() + "attack roll");
     });
-  }, 2000)
 });
 
 function battleResult() {
