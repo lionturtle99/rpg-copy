@@ -2,8 +2,8 @@
 
 #### By _**Liam Eller** **Chase Stokes** **Isaac Overstreet** **Zachary Green**_
 
-#### _brief description_
-This project is a simple text based RPG with 3 dicferent characters and 3 different weapon selections for the characters.
+#### Description
+This project is a simple text based RPG with 3 different characters and 3 different weapon selections for the characters and a working battle screen where you can attack or use items to regenerate health.
 
 ## Technologies Used
 
@@ -18,27 +18,22 @@ This project is a simple text based RPG with 3 dicferent characters and 3 differ
 * _ESLint_
 * _Babel_
 
-
-## Description
-
-_more detailed description._
-
 ## Setup/Installation Requirements
 
-1. Download or clone github repository to local machine in desired directory.
-2. If downloaded, extract .zip contents to desired directory
-3. Navigate to and open directory with Visual Studio Code
-4. Open terminal and install required packages by typing "npm install"
-5. Test code in terminal by typing "npm test"
-6. Build the display environment in the terminal by typing "npm run build"
-7. Run the environment in your default web browser by typing "npm run start" in the terminal
+* _Clone this repo onto your local device_
+* _Open the project in code editor_
+* _Run `npm install` to set up node modules file_
+* _Run `npm run build` to build project with the webpack file_
+* _Run `npm run start` to open a server in your browser to play game_
+
 
 ## Known Bugs
 
-_None_
+* _Battle screen for cave is not set up_
+* _Others.. im sure of it.._
 
 ## License
 
 _[MIT](https://opensource.org/licenses/MIT)_
 
-Copyright (c) _date:_ _by: Isaac Overstreet_
+Copyright (c) _2022_ _by: Isaac Overstreet_
