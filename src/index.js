@@ -168,7 +168,7 @@ $(".battle-dungeon").submit(function(event) {
         battle();
         displayStats();
       }, 1000)
-      battleResult();
+      
       console.log(game.player.str)
       console.log(game.player.attackRoll())
       console.log(game.enemy.hp + "enemy hp");
@@ -214,10 +214,12 @@ function battle() {
   let pAttack = game.player.attackRoll();
   let eAttack = game.enemy.enemyAttack();
   if (game.turn === true) {
+    battleResult();
     game.enemy.hp -= pAttack;
     game.turn = !game.turn;
   } 
   else if (game.turn === false) {
+    battleResult();
     game.player.hp -= eAttack;
     game.turn = !game.turn;
   }
